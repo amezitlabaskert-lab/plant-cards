@@ -278,9 +278,11 @@
   /* ---------------------------------------------------------
      Render
   --------------------------------------------------------- */
-  function render(container, data) {
+  function render(container, data, filterIds) {
     var html = '';
     data.series.forEach(function (series, si) {
+      // Ha van data-series szűrő, csak azokat rendereli
+      if (filterIds && filterIds.length && filterIds.indexOf(series.id) === -1) return;
       var carouselId = series.id || ('series-' + si);
       html += buildCarousel(series, carouselId);
     });
@@ -289,6 +291,7 @@
 
     // Inicializálás
     data.series.forEach(function (series, si) {
+      if (filterIds && filterIds.length && filterIds.indexOf(series.id) === -1) return;
       var carouselId = series.id || ('series-' + si);
       var total = series.varieties.length;
       if (total > 0) pcInitCarousel(carouselId, total);
@@ -303,8 +306,11 @@
     if (!containers.length) return;
 
     containers.forEach(function (container) {
-      var src    = container.getAttribute('data-src');
-      var cssUrl = container.getAttribute('data-css');
+      var src       = container.getAttribute('data-src');
+      var cssUrl    = container.getAttribute('data-css');
+      // data-series="butterfly-candy little-rockstars" → szűrés
+      var seriesAttr = container.getAttribute('data-series');
+      var filterIds  = seriesAttr ? seriesAttr.trim().split(/\s+/) : [];
 
       // CSS betöltés: ha data-css van, azt; ha nem, a JS melletti plant-cards.css
       if (cssUrl) {
@@ -327,7 +333,7 @@
           return r.json();
         })
         .then(function (data) {
-          render(container, data);
+          render(container, data, filterIds);
         })
         .catch(function (err) {
           container.innerHTML = '<div class="pc-error">Nem sikerült betölteni az adatokat.<br><small>' + err.message + '</small></div>';
