@@ -75,7 +75,7 @@
     // Patent badge
     var patentBadge = '';
     if (v.patent && v.patentUrl) {
-      patentBadge = '<a class="pc-patent-link" href="' + v.patentUrl + '" target="_blank" rel="noopener">'
+      patentBadge = '<a class="pc-patent-link" href="' + v.patentUrl + '" data-patent="true" target="_blank" rel="noopener">'
                   + v.patent + ' ↗</a>';
     } else if (v.patentNote) {
       patentBadge = '<span class="pc-patent-pending">' + v.patentNote + '</span>';
