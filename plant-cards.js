@@ -1,6 +1,11 @@
 /* =========================================================
-   plant-cards.js  v1.1
+   plant-cards.js  v1.3
    Univerzális növénykártya-carousel JSON-ból
+   
+   Változások:
+     v1.3 - Twemoji parse a JS-generált tartalomra (render után)
+     v1.2 - h2 sorozatnév és meta sor (breeder, hardiness) eltávolítva
+     v1.1 - eredeti verzió
    
    Használat:
      <div class="plant-cards" data-src="URL/buddleja.json"></div>
