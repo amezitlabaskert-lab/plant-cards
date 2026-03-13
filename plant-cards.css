@@ -1,356 +1,325 @@
 /* =========================================================
-   plant-cards.js  v1.2
-   Univerzális növénykártya-carousel JSON-ból
-   
-   Használat:
-     <div class="plant-cards" data-src="URL/buddleja.json"></div>
-     <script src="URL/plant-cards.js"></script>
-   
-   Opcionális attribútumok a div-en:
-     data-css="URL/plant-cards.css"   ← ha nem alapértelmezett helyen van
+   plant-cards.css
+   Univerzális növénykártya-carousel
    ========================================================= */
 
-(function () {
-  'use strict';
+.pc-carousel-section {
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  margin: 32px 0;
+  position: relative;
+}
 
-  /* ---------------------------------------------------------
-     CSS betöltés
-  --------------------------------------------------------- */
-  function loadCSS(href) {
-    if (document.querySelector('link[href="' + href + '"]')) return;
-    var link = document.createElement('link');
-    link.rel  = 'stylesheet';
-    link.href = href;
-    document.head.appendChild(link);
-  }
+.pc-track-wrap {
+  border-radius: 18px;
+  box-shadow: 0 4px 28px rgba(60, 40, 80, 0.10);
+  position: relative;
+  overflow: hidden;
+}
 
-  /* ---------------------------------------------------------
-     Név megjelenítés: name / nameEU / nameUS logika
-  --------------------------------------------------------- */
-  function displayName(v) {
-    if (v.name) return v.name;
-    var parts = [];
-    if (v.nameEU) parts.push(v.nameEU);
-    if (v.nameUS) parts.push(v.nameUS);
-    return parts.join(' / ');
-  }
+.pc-track {
+  position: relative;
+}
 
-  /* ---------------------------------------------------------
-     Accent szín a color.rgb-ből
-  --------------------------------------------------------- */
-  function accentGradient(color) {
-    if (!color || !color.rgb) return 'linear-gradient(#c9b0e0, #a080c0)';
-    var r = color.rgb[0], g = color.rgb[1], b = color.rgb[2];
-    // Sötétebb verzió
-    var dr = Math.max(0, r - 30);
-    var dg = Math.max(0, g - 30);
-    var db = Math.max(0, b - 30);
-    return 'linear-gradient(rgb(' + r + ',' + g + ',' + b + '), rgb(' + dr + ',' + dg + ',' + db + '))';
-  }
+/* --- Kártya --- */
+.pc-card {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
 
-  function swatchStyle(color) {
-    if (!color || !color.rgb) return 'background:#ddd;';
-    var rgb = color.rgb;
-    // Ha van rhsNote (nyíló → elnyíló), gradient swatch
-    if (color.rhsNote) {
-      // Sötétített változat második színnek
-      var r2 = Math.max(0, rgb[0] - 40);
-      var g2 = Math.max(0, rgb[1] - 40);
-      var b2 = Math.max(0, rgb[2] - 40);
-      return 'background: linear-gradient(135deg, rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ') 50%, rgb(' + r2 + ',' + g2 + ',' + b2 + ') 50%);';
-    }
-    var isLight = (rgb[0] + rgb[1] + rgb[2]) > 680;
-    return 'background: rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ');'
-         + (isLight ? ' box-shadow: rgba(0,0,0,0.06) 0px 1px 3px inset; border: 1px solid rgba(0,0,0,0.1);' : '');
-  }
+.pc-card.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
 
-  /* ---------------------------------------------------------
-     Kártya HTML építés
-  --------------------------------------------------------- */
-  function buildCard(v, seriesName, idx) {
-    var name    = displayName(v);
-    var cultivar = v.cultivar ? "'" + v.cultivar + "'" + (v.year ? ' (' + v.year + ')' : '') : '';
-    var accent  = accentGradient(v.color);
+.pc-card-body {
+  display: flex;
+  min-height: 160px;
+}
 
-    // Patent badge
-    var patentBadge = '';
-    if (v.patent && v.patentUrl) {
-      patentBadge = '<span class="pc-patent-link" data-url="' + v.patentUrl + '">'
-                  + v.patent + ' ↗</span>';
-    } else if (v.patentNote) {
-      patentBadge = '<span class="pc-patent-pending">' + v.patentNote + '</span>';
-    }
+.pc-accent-bar {
+  flex-shrink: 0;
+  width: 10px;
+}
 
-    // Szín szekció
-    var colorSection = '';
-    if (v.color) {
-      var rhs = v.color.rhs
-        ? '<div class="pc-color-rhs">RHS ' + v.color.rhs + (v.color.rhsNote ? ' · ' + v.color.rhsNote : '') + '</div>'
-        : '';
-      var rgb = v.color.rgb
-        ? '<div class="pc-color-rgb">' + v.color.rgb.join(', ') + '</div>'
-        : '';
-      colorSection = '<div>'
-        + '<div class="pc-detail-label">Virágszín</div>'
-        + '<div class="pc-color-row">'
-        +   '<div class="pc-color-swatch" style="' + swatchStyle(v.color) + '"></div>'
-        +   '<div>'
-        +     '<div class="pc-color-name">' + (v.color.name || '') + '</div>'
-        +     rhs
-        +     rgb
-        +   '</div>'
-        + '</div>'
-        + '</div>';
-    }
+.pc-card-content {
+  flex: 1;
+  padding: 22px 26px 22px 22px;
+}
 
-    // Habitus szekció
-    var habitusSection = '';
-    if (v.habit || v.flowerSize || v.scent) {
-      var notes = [];
-      if (v.flowerSize) notes.push('Virágzat: ' + v.flowerSize);
-      if (v.scent)      notes.push('Illat: ' + v.scent);
-      habitusSection = '<div class="pc-habitus">'
-        + '<div class="pc-detail-label">Habitus</div>'
-        + (v.habit ? '<div class="pc-habitus-text">' + v.habit + '</div>' : '')
-        + (notes.length ? '<div class="pc-habitus-note">' + notes.join(' · ') + '</div>' : '')
-        + '</div>';
-    }
+/* --- Header --- */
+.pc-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
 
-    // Divider csak ha mindkettő van
-    var divider = (colorSection && habitusSection) ? '<div class="pc-divider"></div>' : '';
+.pc-series-tag {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b0a090;
+  margin-bottom: 3px;
+}
 
-    // Media szekció
-    var mediaSection = '';
-    if (v.media) {
-      if (v.media.type === 'youtube' && v.media.id) {
-        mediaSection = '<div class="pc-media">'
-          + '<div class="pc-video-wrap">'
-          + '<iframe src="https://www.youtube.com/embed/' + v.media.id + '" '
-          + 'title="' + name + '" allowfullscreen loading="lazy"></iframe>'
-          + '</div></div>';
-      } else if (v.media.type === 'image' && v.media.url) {
-        mediaSection = '<div class="pc-media">'
-          + '<img src="' + v.media.url + '" alt="' + name + '" loading="lazy"'
-          + (v.media.fallbackColor ? ' onerror="this.style.background=\'' + v.media.fallbackColor + '\';this.alt=\'\'"' : '')
-          + '></div>';
-      }
-    }
+.pc-card-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #2d1f3d;
+  line-height: 1.2;
+}
 
-    return '<div class="pc-card">'
-      + '<div class="pc-card-body">'
-      +   '<div class="pc-accent-bar" style="background:' + accent + ';"></div>'
-      +   '<div class="pc-card-content">'
-      +     '<div class="pc-card-header">'
-      +       '<div>'
-      +         '<div class="pc-series-tag">' + seriesName + '</div>'
-      +         '<div class="pc-card-title">\'' + name + '\'</div>'
-      +         (cultivar ? '<div class="pc-card-subtitle">' + cultivar + '</div>' : '')
-      +       '</div>'
-      +       patentBadge
-      +     '</div>'
-      +     '<div class="pc-card-details">'
-      +       colorSection
-      +       divider
-      +       habitusSection
-      +     '</div>'
-      +   '</div>'
-      + '</div>'
-      + mediaSection
-      + '</div>';
-  }
+.pc-card-subtitle {
+  font-size: 13px;
+  font-style: italic;
+  color: #9a8878;
+  margin-top: 2px;
+}
 
-  /* ---------------------------------------------------------
-     Carousel HTML + nav
-  --------------------------------------------------------- */
-  function buildCarousel(series, carouselId) {
-    var seriesDisplayName = series.name ||
-      [series.nameUS ? '🇺🇸 ' + series.nameUS : '',
-       series.nameEU ? '🇪🇺 ' + series.nameEU : '']
-      .filter(Boolean).join(' / ') || '';
-    var cards = series.varieties.map(function (v, i) {
-      return buildCard(v, seriesDisplayName, i);
-    }).join('');
+/* --- Patent badge --- */
+.pc-patent-link {
+  border-radius: 20px;
+  border: 1px solid #c9b0e0;
+  color: #7b4ea0;
+  font-size: 12px;
+  padding: 4px 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+  cursor: pointer;
+}
 
-    var total = series.varieties.length;
+.pc-patent-link:hover {
+  background: #f5eeff;
+}
 
-    return '<div class="pc-carousel-section" id="pc-carousel-' + carouselId + '">'
-      +   '<div class="pc-track-wrap">'
-      +     '<div class="pc-track" id="pc-track-' + carouselId + '">'
-      +       cards
-      +     '</div>'
-      +   '</div>'
-      +   '<div class="pc-nav">'
-      +     '<button class="pc-btn" id="pc-prev-' + carouselId + '" disabled>←</button>'
-      +     '<div class="pc-dots" id="pc-dots-' + carouselId + '"></div>'
-      +     '<span class="pc-counter" id="pc-counter-' + carouselId + '">1 / ' + total + '</span>'
-      +     '<button class="pc-btn" id="pc-next-' + carouselId + '">→</button>'
-      +   '</div>'
-      + '</div>';
-  }
+.pc-patent-pending {
+  border-radius: 20px;
+  border: 1px solid #f0c080;
+  background: #fff3e0;
+  color: #e67e22;
+  font-size: 12px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 
-  /* ---------------------------------------------------------
-     Carousel logika
-  --------------------------------------------------------- */
-  var pcState = {};
+/* --- Details --- */
+.pc-card-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
 
-  function pcInitCarousel(id, total) {
-    pcState[id] = { cur: 0, total: total };
+.pc-detail-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #b0a090;
+  margin-bottom: 6px;
+}
 
-    var track   = document.getElementById('pc-track-' + id);
-    var dotsEl  = document.getElementById('pc-dots-' + id);
-    var counter = document.getElementById('pc-counter-' + id);
-    var prevBtn = document.getElementById('pc-prev-' + id);
-    var nextBtn = document.getElementById('pc-next-' + id);
+.pc-color-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    if (!track || !dotsEl) return;
+.pc-color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
 
-    // Első kártya aktív
-    var cards = track.querySelectorAll('.pc-card');
-    cards.forEach(function (c, i) { c.classList.toggle('active', i === 0); });
+.pc-color-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2d1f3d;
+}
 
-    // Dotok
-    dotsEl.innerHTML = '';
-    for (var i = 0; i < total; i++) {
-      (function (idx) {
-        var dot = document.createElement('button');
-        dot.className = 'pc-dot' + (idx === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', (idx + 1) + '. kártya');
-        dot.addEventListener('click', function () { pcGoTo(id, idx); });
-        dotsEl.appendChild(dot);
-      })(i);
-    }
+.pc-color-rhs {
+  font-size: 12px;
+  color: #b0a090;
+}
 
-    // Gombok
-    if (prevBtn) prevBtn.addEventListener('click', function () { pcGoTo(id, pcState[id].cur - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { pcGoTo(id, pcState[id].cur + 1); });
+.pc-color-rgb {
+  font-size: 11px;
+  color: #c8beb0;
+}
 
-    // Touch swipe
-    var wrap = document.querySelector('#pc-carousel-' + id + ' .pc-track-wrap');
-    if (wrap) {
-      var startX = 0;
-      wrap.addEventListener('touchstart', function (e) {
-        startX = e.touches[0].clientX;
-      }, { passive: true });
-      wrap.addEventListener('touchend', function (e) {
-        var dx = e.changedTouches[0].clientX - startX;
-        if (Math.abs(dx) > 40) pcGoTo(id, pcState[id].cur + (dx < 0 ? 1 : -1));
-      }, { passive: true });
-    }
-  }
+.pc-divider {
+  align-self: stretch;
+  width: 1px;
+  background: #ede7de;
+  flex-shrink: 0;
+}
 
-  function pcGoTo(id, idx) {
-    var s = pcState[id];
-    if (!s) return;
-    idx = Math.max(0, Math.min(s.total - 1, idx));
-    s.cur = idx;
+/* --- Habitus --- */
+.pc-habitus {
+  flex: 1;
+  min-width: 150px;
+}
 
-    var track = document.getElementById('pc-track-' + id);
-    if (track) {
-      track.querySelectorAll('.pc-card').forEach(function (c, i) {
-        c.classList.toggle('active', i === idx);
-      });
-    }
+.pc-habitus-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4a3a2a;
+}
 
-    var dotsEl = document.getElementById('pc-dots-' + id);
-    if (dotsEl) {
-      dotsEl.querySelectorAll('.pc-dot').forEach(function (d, i) {
-        d.className = 'pc-dot' + (i === idx ? ' active' : '');
-      });
-    }
+.pc-habitus-note {
+  font-size: 12px;
+  color: #8a7a6a;
+  margin-top: 5px;
+}
 
-    var counter = document.getElementById('pc-counter-' + id);
-    if (counter) counter.textContent = (idx + 1) + ' / ' + s.total;
+/* --- Media --- */
+.pc-media {
+  border-top: 1px solid #f0ece6;
+}
 
-    var prevBtn = document.getElementById('pc-prev-' + id);
-    var nextBtn = document.getElementById('pc-next-' + id);
-    if (prevBtn) prevBtn.disabled = (idx === 0);
-    if (nextBtn) nextBtn.disabled = (idx === s.total - 1);
-  }
+.pc-media img {
+  display: block;
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  object-position: center center;
+}
 
-  /* ---------------------------------------------------------
-     Render
-  --------------------------------------------------------- */
-  function render(container, data, filterIds) {
-    var html = '';
-    data.series.forEach(function (series, si) {
-      // Ha van data-series szűrő, csak azokat rendereli
-      if (filterIds && filterIds.length && filterIds.indexOf(series.id) === -1) return;
-      var carouselId = series.id || ('series-' + si);
-      html += buildCarousel(series, carouselId);
-    });
+.pc-video-wrap {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+}
 
-    container.innerHTML = html;
+.pc-video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
-    // Inicializálás
-    data.series.forEach(function (series, si) {
-      if (filterIds && filterIds.length && filterIds.indexOf(series.id) === -1) return;
-      var carouselId = series.id || ('series-' + si);
-      var total = series.varieties.length;
-      if (total > 0) pcInitCarousel(carouselId, total);
-    });
-  }
+/* --- Note --- */
+.pc-note {
+  background: rgba(252, 248, 227, 0.95);
+  border-top: 1px solid #faebd2;
+  color: #8a6d3b;
+  font-size: 0.88em;
+  padding: 12px 16px;
+}
 
-  /* ---------------------------------------------------------
-     Egy container inicializálása
-  --------------------------------------------------------- */
-  function initContainer(container) {
-    if (container.getAttribute('data-pc-init')) return;
-    container.setAttribute('data-pc-init', '1');
+/* --- Nav --- */
+.pc-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  gap: 12px;
+}
 
-    var src        = container.getAttribute('data-src');
-    var cssUrl     = container.getAttribute('data-css');
-    var seriesAttr = container.getAttribute('data-series');
-    var filterIds  = seriesAttr ? seriesAttr.trim().split(/\s+/) : [];
+.pc-btn {
+  background: #fff;
+  border: 1.5px solid #d8cfe8;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #7b4ea0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, border-color 0.18s;
+  flex-shrink: 0;
+  line-height: 1;
+}
 
-    if (cssUrl) {
-      loadCSS(cssUrl);
-    } else {
-      var scripts = document.querySelectorAll('script[src]');
-      scripts.forEach(function (s) {
-        if (s.src && s.src.indexOf('plant-cards.js') !== -1) {
-          loadCSS(s.src.replace('plant-cards.js', 'plant-cards.css'));
-        }
-      });
-    }
+.pc-btn:hover {
+  background: #f5eeff;
+  border-color: #b080d0;
+}
 
-    container.innerHTML = '<div class="pc-loading">Betöltés…</div>';
+.pc-btn:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
 
-    fetch(src)
-      .then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(function (data) {
-        render(container, data, filterIds);
-      })
-      .catch(function (err) {
-        container.innerHTML = '<div class="pc-error">Nem sikerült betölteni az adatokat.<br><small>' + err.message + '</small></div>';
-      });
-  }
+.pc-dots {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+}
 
-  /* ---------------------------------------------------------
-     Belépési pont
-  --------------------------------------------------------- */
-  function init(scope) {
-    var root = scope || document;
-    root.querySelectorAll('.plant-cards[data-src]').forEach(initContainer);
-  }
+.pc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  padding: 0;
+}
 
-  // Globális újrainicializálás — modal újratöltéshez
-  window.reinitPlantCards = function (scope) { init(scope); };
+.pc-dot.active {
+  background: #7b4ea0;
+  transform: scale(1.35);
+}
 
-  // Patent link handler — <span> mert Blogger az <a> tageket normalizálja
-  document.addEventListener('click', function (e) {
-    var el = e.target.closest('.pc-patent-link');
-    if (!el) return;
-    var url = el.getAttribute('data-url');
-    if (url) window.open(url, '_blank', 'noopener');
-  });
+.pc-counter {
+  font-size: 12px;
+  color: #b0a090;
+  white-space: nowrap;
+}
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { init(); });
-  } else {
-    init();
-  }
+/* --- Series heading --- */
+.pc-series-heading {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d1f3d;
+  padding-bottom: 10px;
+  margin-top: 36px;
+  margin-bottom: 4px;
+  border-bottom: 2px solid #d8cfe8;
+}
 
-})();
+.pc-series-meta {
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+/* --- Loading / error --- */
+.pc-loading {
+  text-align: center;
+  padding: 40px;
+  color: #b0a090;
+  font-size: 14px;
+}
+
+.pc-error {
+  text-align: center;
+  padding: 40px;
+  color: #c0392b;
+  font-size: 14px;
+}
