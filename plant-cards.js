@@ -173,18 +173,7 @@
 
     var total = series.varieties.length;
 
-    // Meta sor (nemesítő, forgalmazó, télállóság)
-    var meta = [];
-    if (series.breeder)     meta.push(series.breeder);
-    if (series.breederUS)   meta.push('🇺🇸 ' + series.breederUS);
-    if (series.breederEU)   meta.push('🇪🇺 ' + series.breederEU);
-    if (series.hardiness)   meta.push('❄️ ' + series.hardiness);
-    var metaHtml = meta.length
-      ? '<div class="pc-series-meta">' + meta.join(' · ') + '</div>'
-      : '';
-
-    return metaHtml
-      + '<div class="pc-carousel-section" id="pc-carousel-' + carouselId + '">'
+    return '<div class="pc-carousel-section" id="pc-carousel-' + carouselId + '">'
       +   '<div class="pc-track-wrap">'
       +     '<div class="pc-track" id="pc-track-' + carouselId + '">'
       +       cards
