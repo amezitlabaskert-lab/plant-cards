@@ -3,7 +3,7 @@
    Univerzális növénykártya-carousel JSON-ból
    
    Változások:
-     v1.9 - habitus szekció: habit / virágméret / illat külön sorban jelenik meg
+     v1.9 - habitus szekció: habit / virágméret / illat külön sorban jelenik meg.
      v1.8 - habitus label fix: Habitus · Virágméret · Illat mindig megjelenik; hiányzó adat: n.a.
      v1.7 - patent badge: ↗ → 🔗 emoji; Twemoji: csak zászló emojik (1f1xx)
      v1.6 - Twemoji fix: explicit CDN base, callback eltávolítva; CSS: img.emoji fix
