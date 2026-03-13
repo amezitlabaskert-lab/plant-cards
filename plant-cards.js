@@ -1,8 +1,10 @@
 /* =========================================================
-   plant-cards.js  v2.0
+   plant-cards.js  v2.1
    Univerzális növénykártya-carousel JSON-ból
    
    Változások:
+     v2.1 - CSS fix: pc-card display:none/flex váltás (overflow:hidden vágta a videót);
+             JS fix: kártyaváltáskor iframe src reset a hang leállításához
      v2.0 - YouTube iframe fix: rel=0, playsinline=1, enablejsapi=1, origin param,
              frameborder=0, teljes allow attribútum a lejátszáshoz
      v1.9 - habitus szekció: habit / virágméret / illat külön sorban jelenik meg
@@ -261,6 +263,14 @@
     }
   }
 
+  function stopVideosInCard(card) {
+    card.querySelectorAll('iframe').forEach(function (iframe) {
+      var src = iframe.src;
+      iframe.src = '';
+      iframe.src = src;
+    });
+  }
+
   function pcGoTo(id, idx) {
     var s = pcState[id];
     if (!s) return;
@@ -270,6 +280,8 @@
     var track = document.getElementById('pc-track-' + id);
     if (track) {
       track.querySelectorAll('.pc-card').forEach(function (c, i) {
+        var leaving = c.classList.contains('active') && i !== idx;
+        if (leaving) stopVideosInCard(c);
         c.classList.toggle('active', i === idx);
       });
     }
@@ -386,7 +398,7 @@
     if (url) window.open(url, '_blank', 'noopener');
   });
 
-  console.log('%c🌿 plant-cards.js v2.0 betöltve', 'color: #7b4ea0; font-weight: bold;');
+  console.log('%c🌿 plant-cards.js v2.1 betöltve', 'color: #7b4ea0; font-weight: bold;');
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(); });
