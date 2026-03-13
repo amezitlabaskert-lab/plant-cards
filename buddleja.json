@@ -8,15 +8,19 @@
       "varieties": [
         {
           "id": "botex-003",
-          "name": "Little White",
-          "cultivar": "Botex 003",
+          "name": "'Little White'",
+          "cultivar": "'Botex 003'",
           "year": 2022,
           "patent": "US PP34525",
           "patentUrl": "https://patents.justia.com/patent/PP34525",
           "color": {
             "name": "Fehér",
             "rhs": "N155B",
-            "rgb": [240, 230, 231]
+            "rgb": [
+              240,
+              230,
+              231
+            ]
           },
           "habit": "Kompakt, felfelé törő, sűrű ágrendszer. Természetes formája oblong.",
           "flowerSize": "11.5 cm",
@@ -27,15 +31,19 @@
         },
         {
           "id": "botex-002",
-          "name": "Lila Sweetheart",
-          "cultivar": "Botex 002",
+          "name": "'Lila Sweetheart'",
+          "cultivar": "'Botex 002'",
           "year": 2022,
           "patent": "US PP34499",
           "patentUrl": "https://patents.justia.com/patent/PP34499",
           "color": {
             "name": "Világos lila",
             "rhs": "N87D",
-            "rgb": [186, 155, 191]
+            "rgb": [
+              186,
+              155,
+              191
+            ]
           },
           "habit": "Sűrű, kompakt, kissé szétterülő, de alapvetően felfelé kerekedő.",
           "flowerSize": "11.5 cm",
@@ -46,15 +54,19 @@
         },
         {
           "id": "botex-004",
-          "name": "Little Lila",
-          "cultivar": "Botex 004",
+          "name": "'Little Lila'",
+          "cultivar": "'Botex 004'",
           "year": 2022,
           "patent": "US PP34378",
           "patentUrl": "https://patents.justia.com/patent/PP34378",
           "color": {
             "name": "Orgonakék",
             "rhs": "85A",
-            "rgb": [178, 164, 212]
+            "rgb": [
+              178,
+              164,
+              212
+            ]
           },
           "habit": "Kompakt, de határozottan felfelé törő. Elegáns, vázaszerű alak.",
           "flowerSize": "11.5 cm",
@@ -65,15 +77,19 @@
         },
         {
           "id": "botex-001",
-          "name": "Little Purple",
-          "cultivar": "Botex 001",
+          "name": "'Little Purple'",
+          "cultivar": "'Botex 001'",
           "year": 2022,
           "patent": "US PP34515",
           "patentUrl": "https://patents.justia.com/patent/PP34515",
           "color": {
             "name": "Kékeslila",
             "rhs": "90B",
-            "rgb": [148, 132, 190]
+            "rgb": [
+              148,
+              132,
+              190
+            ]
           },
           "habit": "Nagyon kompakt, sűrű ágrendszerű. Természetes formája felfelé kerekedő.",
           "flowerSize": "5.3 cm",
@@ -84,15 +100,19 @@
         },
         {
           "id": "botex-008",
-          "name": "Little Magenta",
-          "cultivar": "Botex 008",
+          "name": "'Little Magenta'",
+          "cultivar": "'Botex 008'",
           "year": 2023,
           "patent": "US PP36578",
           "patentUrl": "https://patents.justia.com/patent/PP36578",
           "color": {
             "name": "Magenta-lila",
             "rhs": "77A",
-            "rgb": [123, 53, 109]
+            "rgb": [
+              123,
+              53,
+              109
+            ]
           },
           "habit": "Nagyon kompakt, sűrű és felfelé törő. Természetesen gömbölyded, rendezett forma.",
           "flowerSize": "6 cm",
@@ -103,15 +123,19 @@
         },
         {
           "id": "botex-005",
-          "name": "Little Pink",
-          "cultivar": "Botex 005",
+          "name": "'Little Pink'",
+          "cultivar": "'Botex 005'",
           "year": 2022,
           "patent": "US PP34703",
           "patentUrl": "https://patents.justia.com/patent/PP34703",
           "color": {
             "name": "Élénk rózsaszín",
             "rhs": "N74C",
-            "rgb": [211, 107, 179]
+            "rgb": [
+              211,
+              107,
+              179
+            ]
           },
           "habit": "Rendkívül kompakt, sűrű és felfelé törő. Természetesen gömbölyded formát ölt.",
           "flowerSize": "12 cm",
@@ -122,8 +146,8 @@
         },
         {
           "id": "botex-007",
-          "name": "Little Cerise",
-          "cultivar": "Botex 007",
+          "name": "'Little Cerise'",
+          "cultivar": "'Botex 007'",
           "year": 2023,
           "patent": "US PP36348",
           "patentUrl": "https://patents.justia.com/patent/PP36348",
@@ -131,7 +155,11 @@
             "name": "Cseresznyepiros → lazacrózsaszín",
             "rhs": "71C → 63A",
             "rhsNote": "fiatal → érett",
-            "rgb": [200, 60, 100]
+            "rgb": [
+              200,
+              60,
+              100
+            ]
           },
           "habit": "Sűrű, rendkívül kompakt és felfelé törő. Természetesen kerekded forma.",
           "flowerSize": "14 cm",
@@ -142,15 +170,19 @@
         },
         {
           "id": "botex-006",
-          "name": "Little Ruby",
-          "cultivar": "Botex 006",
+          "name": "'Little Ruby'",
+          "cultivar": "'Botex 006'",
           "year": 2022,
           "patent": "US PP34500",
           "patentUrl": "https://patents.justia.com/patent/PP34500",
           "color": {
             "name": "Vöröses-rózsaszín",
             "rhs": "58B",
-            "rgb": [183, 44, 100]
+            "rgb": [
+              183,
+              44,
+              100
+            ]
           },
           "habit": "Sűrű, nagyon kompakt, felfelé törő. Természetes váza-alakú növekedés.",
           "flowerSize": "7 cm",
@@ -161,15 +193,19 @@
         },
         {
           "id": "botex-014",
-          "name": "Little Bubblegum",
-          "cultivar": "Botex 014",
+          "name": "'Little Bubblegum'",
+          "cultivar": "'Botex 014'",
           "year": 2025,
           "patent": null,
           "patentNote": "PBR bejegyzés alatt",
           "color": {
             "name": "Vibráló neon-rózsaszín",
             "rhs": null,
-            "rgb": [220, 30, 120]
+            "rgb": [
+              220,
+              30,
+              120
+            ]
           },
           "habit": "Jól elágazó, természetesen kerekded, kompakt növekedés.",
           "flowerSize": null,
@@ -180,15 +216,19 @@
         },
         {
           "id": "botex-016",
-          "name": "Little Blackberry",
-          "cultivar": "Botex 016",
+          "name": "'Little Blackberry'",
+          "cultivar": "'Botex 016'",
           "year": 2025,
           "patent": null,
           "patentNote": "PBR bejegyzés alatt",
           "color": {
             "name": "Drámai sötétlila",
             "rhs": null,
-            "rgb": [58, 30, 110]
+            "rgb": [
+              58,
+              30,
+              110
+            ]
           },
           "habit": "Természetesen kerekded, gömbölyű forma. A sorozat egyik legsűrűbb, legjobban elágazó tagja.",
           "flowerSize": null,
@@ -207,15 +247,19 @@
       "varieties": [
         {
           "id": "botex-013",
-          "name": "White",
-          "cultivar": "Botex 013",
+          "name": "'White'",
+          "cultivar": "'Botex 013'",
           "year": 2025,
           "patent": "US PP36650",
           "patentUrl": "https://patents.justia.com/patent/PP36650",
           "color": {
             "name": "Fehér",
             "rhs": "NN155B · 22B",
-            "rgb": [243, 239, 232]
+            "rgb": [
+              243,
+              239,
+              232
+            ]
           },
           "habit": "Extrém kompakt, sűrű, természetesen gömbölyded.",
           "flowerSize": "7 cm",
@@ -226,15 +270,19 @@
         },
         {
           "id": "botex-009",
-          "name": "Red",
-          "cultivar": "Botex 009",
+          "name": "'Red'",
+          "cultivar": "'Botex 009'",
           "year": 2025,
           "patent": "US PP36579",
           "patentUrl": "https://patents.justia.com/patent/PP36579",
           "color": {
             "name": "Fukszia-rózsaszín",
             "rhs": "71C",
-            "rgb": [172, 70, 128]
+            "rgb": [
+              172,
+              70,
+              128
+            ]
           },
           "habit": "Nagyon tömött, felfelé törő, alacsony marad.",
           "flowerSize": "6.7 cm",
@@ -245,8 +293,8 @@
         },
         {
           "id": "botex-010",
-          "name": "Purple",
-          "cultivar": "Botex 010",
+          "name": "'Purple'",
+          "cultivar": "'Botex 010'",
           "year": 2025,
           "patent": "US PP36825",
           "patentUrl": "https://patents.justia.com/patent/PP36825",
@@ -254,7 +302,11 @@
             "name": "Lila → magenta-lila",
             "rhs": "N81A → N74A",
             "rhsNote": "fiatal → érett",
-            "rgb": [120, 47, 119]
+            "rgb": [
+              120,
+              47,
+              119
+            ]
           },
           "habit": "Nagyon kompakt, sűrű növekedés.",
           "flowerSize": "6 cm",
@@ -265,15 +317,19 @@
         },
         {
           "id": "botex-011",
-          "name": "Pink",
-          "cultivar": "Botex 011",
+          "name": "'Pink'",
+          "cultivar": "'Botex 011'",
           "year": 2025,
           "patent": "US PP36670",
           "patentUrl": "https://patents.justia.com/patent/PP36670",
           "color": {
             "name": "Világos rózsaszín",
             "rhs": "62B",
-            "rgb": [240, 160, 186]
+            "rgb": [
+              240,
+              160,
+              186
+            ]
           },
           "habit": "Halvány, lágy rózsaszín. Kompakt, felfelé törő növekedés.",
           "flowerSize": "7.2 cm",
@@ -284,15 +340,19 @@
         },
         {
           "id": "botex-012",
-          "name": "Blue",
-          "cultivar": "Botex 012",
+          "name": "'Blue'",
+          "cultivar": "'Botex 012'",
           "year": 2025,
           "patent": "US PP36649",
           "patentUrl": "https://patents.justia.com/patent/PP36649",
           "color": {
             "name": "Lila-kék / orgona",
             "rhs": "90B",
-            "rgb": [107, 86, 143]
+            "rgb": [
+              107,
+              86,
+              143
+            ]
           },
           "habit": "Igazi orgonakék árnyalat. Kompakt, sűrű, gömbölyded habitus.",
           "flowerSize": "5.2 cm",
@@ -313,17 +373,23 @@
       "varieties": [
         {
           "id": "buddaplav",
-          "nameUS": "Lavender",
-          "cultivar": "Buddaplav",
+          "nameUS": "'Lavender'",
+          "cultivar": "'Buddaplav'",
           "year": 2021,
           "patent": "US PP33625",
           "patentUrl": "https://patents.justia.com/patent/PP33625",
-          "availableMarkets": ["US"],
+          "availableMarkets": [
+            "US"
+          ],
           "marketNote": "Csak az amerikai piacon elérhető",
           "color": {
             "name": "Világos lila",
             "rhs": "N82B",
-            "rgb": [178, 132, 190]
+            "rgb": [
+              178,
+              132,
+              190
+            ]
           },
           "habit": "Kompakt, gömbölyded, mérsékelt növekedési erély. Felfelé törő ágak.",
           "flowerSize": "~7 cm",
@@ -334,57 +400,71 @@
         },
         {
           "id": "dapconwhi",
-          "nameEU": "White",
-          "nameUS": "White",
-          "cultivar": "Dapconwhi",
+          "nameEU": "'White'",
+          "nameUS": "'White'",
+          "cultivar": "'Dapconwhi'",
           "year": 2021,
           "patent": "US PP33566",
           "patentUrl": "https://patents.justia.com/patent/PP33566",
           "color": {
             "name": "Fehér",
             "rhs": "NN155C · N25C",
-            "rgb": [240, 238, 232]
+            "rgb": [
+              240,
+              238,
+              232
+            ]
           },
           "habit": "Kompakt, gömbölyded, mérsékelt növekedési erély. Sűrű elágazás.",
           "flowerSize": "~5 cm",
           "media": {
             "type": "image",
-            "url": "https://i.postimg.cc/Y0w44N3M/BUDDLEJA-davidii-TINY-BUDDY-WHITE-Dapcomwhi.jpg"
+            "url": "https://donnadipiante.com/4861-thickbox_default/buddleja-x-tiny-buddy-white.jpg"
           }
         },
         {
           "id": "condappin",
-          "nameUS": "Pink",
-          "nameEU": "Hot Pink",
-          "cultivar": "Condappin",
+          "nameUS": "'Pink'",
+          "nameEU": "'Hot Pink'",
+          "cultivar": "'Condappin'",
           "year": 2024,
           "patent": "US PP35922",
           "patentUrl": "https://patents.justia.com/patent/PP35922",
           "color": {
             "name": "Élénk pink",
             "rhs": "N81A",
-            "rgb": [210, 110, 170]
+            "rgb": [
+              210,
+              110,
+              170
+            ]
           },
           "habit": "Kompakt, jól elágazó, felfelé törő. Sűrű, egyenletes bokros alak.",
           "flowerSize": "~14 cm",
           "media": {
             "type": "image",
-            "url": "https://i.postimg.cc/1XZgg0HP/BUDDLEJA-davidii-TINY-BUDDY-HOT-PINK-Condappin.jpg"
+            "url": "https://donnadipiante.com/4652-thickbox_default/buddleja-davidii-tiny-buddy-hot-pink.jpg"
           }
         },
         {
           "id": "bud18blu20",
-          "nameUS": "Blue",
-          "cultivar": "Bud18blu20",
+          "nameUS": "'Blue'",
+          "cultivar": "'Bud18blu20'",
           "year": 2025,
           "patent": "US PP36916",
           "patentUrl": "https://patents.justia.com/patent/PP36916",
-          "availableMarkets": ["US"],
+          "availableMarkets": [
+            "US"
+          ],
           "marketNote": "Csak az amerikai piacon elérhető",
           "color": {
             "name": "Kék-ibolya",
             "rhs": "94B",
-            "rgb": [100, 120, 200]
+            "rgb": [
+              100,
+              120,
+              200
+            ]
           },
           "habit": "Kompakt, jól elágazó, felfelé törő. Alacsony termékenység.",
           "flowerSize": "~15 cm",
@@ -395,42 +475,54 @@
         },
         {
           "id": "3397ddybud",
-          "nameEU": "Violet",
-          "cultivar": "3397Ddybud",
+          "nameEU": "'Violet'",
+          "cultivar": "'3397Ddybud'",
           "year": null,
           "patent": null,
           "patentNote": "Csak EU piac, nincs US patent",
-          "availableMarkets": ["EU"],
+          "availableMarkets": [
+            "EU"
+          ],
           "color": {
             "name": "Viola-lila",
             "rhs": null,
-            "rgb": [140, 80, 160]
+            "rgb": [
+              140,
+              80,
+              160
+            ]
           },
           "habit": null,
           "flowerSize": null,
           "media": {
             "type": "image",
-            "url": "https://i.postimg.cc/Xq0ZZK8W/BUDDLEJA-davidii-TINY-BUDDY-VIOLET-3397ddybud.jpg"
+            "url": "https://donnadipiante.com/4864-thickbox_default/buddleja-x-tiny-buddy-violet.jpg"
           }
         },
         {
           "id": "tinpurbud",
-          "nameEU": "Blue",
-          "cultivar": "Tinpurbud",
+          "nameEU": "'Blue'",
+          "cultivar": "'Tinpurbud'",
           "year": null,
           "patent": null,
           "patentNote": "Csak EU piac, nincs US patent",
-          "availableMarkets": ["EU"],
+          "availableMarkets": [
+            "EU"
+          ],
           "color": {
             "name": "Kékeslila",
             "rhs": null,
-            "rgb": [80, 110, 180]
+            "rgb": [
+              80,
+              110,
+              180
+            ]
           },
           "habit": null,
           "flowerSize": null,
           "media": {
             "type": "image",
-            "url": "https://i.postimg.cc/MH8cc0DS/BUDDLEJA-davidii-TINY-BUDDY-DEEP-BLUE-Tinpurbud.jpg"
+            "url": "https://donnadipiante.com/4812-thickbox_default/buddleja-davidii-tiny-buddy-deep-blue.jpg"
           }
         }
       ]
@@ -445,15 +537,19 @@
       "varieties": [
         {
           "id": "blue-chip",
-          "name": "Blue Chip",
-          "cultivar": "Blue Chip",
+          "name": "'Blue Chip'",
+          "cultivar": "'Blue Chip'",
           "year": 2010,
           "patent": "US PP19991",
           "patentUrl": "https://patents.justia.com/patent/PP19991",
           "color": {
             "name": "Kékeslila",
             "rhs": null,
-            "rgb": [90, 110, 185]
+            "rgb": [
+              90,
+              110,
+              185
+            ]
           },
           "habit": "Kompakt, szétterülő, erős ágak.",
           "flowerSize": null,
@@ -464,15 +560,19 @@
         },
         {
           "id": "blue-chip-jr",
-          "name": "Blue Chip Jr.",
-          "cultivar": "Blue Chip Jr.",
+          "name": "'Blue Chip Jr.'",
+          "cultivar": "'Blue Chip Jr.'",
           "year": 2016,
           "patent": "US PP26581",
           "patentUrl": "https://patents.justia.com/patent/PP26581",
           "color": {
             "name": "Kékeslila",
             "rhs": null,
-            "rgb": [80, 100, 175]
+            "rgb": [
+              80,
+              100,
+              175
+            ]
           },
           "habit": "Még kompaktabb növekedés, steril fajta.",
           "flowerSize": null,
@@ -483,15 +583,19 @@
         },
         {
           "id": "pink-micro-chip",
-          "name": "Pink Micro Chip",
-          "cultivar": "Pink Micro Chip",
+          "name": "'Pink Micro Chip'",
+          "cultivar": "'Pink Micro Chip'",
           "year": 2015,
           "patent": "US PP26547",
           "patentUrl": "https://patents.justia.com/patent/PP26547",
           "color": {
             "name": "Halványrózsaszín",
             "rhs": null,
-            "rgb": [220, 130, 175]
+            "rgb": [
+              220,
+              130,
+              175
+            ]
           },
           "habit": "A sorozat egyik legkisebb tagja. Kompakt, szétterülő habitus.",
           "flowerSize": null,
@@ -502,15 +606,19 @@
         },
         {
           "id": "ruby-chip",
-          "name": "Ruby Chip",
-          "cultivar": "Ruby Chip",
+          "name": "'Ruby Chip'",
+          "cultivar": "'Ruby Chip'",
           "year": 2020,
           "patent": "US PP32399",
           "patentUrl": "https://patents.justia.com/patent/PP32399",
           "color": {
             "name": "Sötét vöröslila",
             "rhs": "72A",
-            "rgb": [185, 45, 100]
+            "rgb": [
+              185,
+              45,
+              100
+            ]
           },
           "habit": "Kompakt, felfelé törő, szétterülő. Sűrű, bozótos alak.",
           "flowerSize": "4–10 cm",
@@ -522,16 +630,20 @@
         },
         {
           "id": "purple-haze",
-          "nameUS": "Purple Haze",
-          "nameEU": "Purple Chip",
-          "cultivar": "Purple Haze",
+          "nameUS": "'Purple Haze'",
+          "nameEU": "'Purple Chip'",
+          "cultivar": "'Purple Haze'",
           "year": 2013,
           "patent": "US PP24514",
           "patentUrl": "https://patents.justia.com/patent/PP24514",
           "color": {
             "name": "Sötétlila",
             "rhs": null,
-            "rgb": [120, 55, 155]
+            "rgb": [
+              120,
+              55,
+              155
+            ]
           },
           "habit": "Kompakt, szétterülő habitus.",
           "flowerSize": null,
@@ -542,15 +654,19 @@
         },
         {
           "id": "lilac-chip",
-          "name": "Lilac Chip",
-          "cultivar": "Lilac Chip",
+          "name": "'Lilac Chip'",
+          "cultivar": "'Lilac Chip'",
           "year": 2013,
           "patent": "US PP24016",
           "patentUrl": "https://patents.justia.com/patent/PP24016",
           "color": {
             "name": "Orgona-lila",
             "rhs": null,
-            "rgb": [175, 158, 210]
+            "rgb": [
+              175,
+              158,
+              210
+            ]
           },
           "habit": "Kompakt, szétterülő, alacsony növekedési erély.",
           "flowerSize": null,
@@ -561,16 +677,20 @@
         },
         {
           "id": "ice-chip",
-          "nameUS": "Ice Chip",
-          "nameEU": "White Chip",
-          "cultivar": "Ice Chip",
+          "nameUS": "'Ice Chip'",
+          "nameEU": "'White Chip'",
+          "cultivar": "'Ice Chip'",
           "year": 2013,
           "patent": "US PP24015",
           "patentUrl": "https://patents.justia.com/patent/PP24015",
           "color": {
             "name": "Fehér",
             "rhs": null,
-            "rgb": [238, 235, 228]
+            "rgb": [
+              238,
+              235,
+              228
+            ]
           },
           "habit": "Kompakt, szétterülő habitus.",
           "flowerSize": null,
@@ -581,16 +701,20 @@
         },
         {
           "id": "miss-molly",
-          "nameUS": "Miss Molly",
-          "nameEU": "Red Chip",
-          "cultivar": "Miss Molly",
+          "nameUS": "'Miss Molly'",
+          "nameEU": "'Red Chip'",
+          "cultivar": "'Miss Molly'",
           "year": 2012,
           "patent": "US PP23425",
           "patentUrl": "https://patents.justia.com/patent/PP23425",
           "color": {
             "name": "Purpurvörös",
             "rhs": null,
-            "rgb": [195, 40, 80]
+            "rgb": [
+              195,
+              40,
+              80
+            ]
           },
           "habit": "Kompakt. USA-ban kivonva, Európában Red Chip névvel forgalomban.",
           "flowerSize": null,
@@ -611,16 +735,20 @@
       "varieties": [
         {
           "id": "smnbdbt",
-          "nameUS": "Blue",
-          "nameEU": "Indigo",
-          "cultivar": "SMNBDBT",
+          "nameUS": "'Blue'",
+          "nameEU": "'Indigo'",
+          "cultivar": "'SMNBDBT'",
           "year": 2017,
           "patent": "US PP28794",
           "patentUrl": "https://patents.justia.com/patent/PP28794",
           "color": {
             "name": "Viola-kék",
             "rhs": "93A",
-            "rgb": [93, 100, 178]
+            "rgb": [
+              93,
+              100,
+              178
+            ]
           },
           "habit": "Kompakt, sűrű, kerekded, kissé szétterülő. Vastag, rövid ízközös szárak.",
           "flowerSize": "~16 cm",
@@ -632,16 +760,20 @@
         },
         {
           "id": "smnbdpt",
-          "nameUS": "Pink",
-          "nameEU": "Flamingo",
-          "cultivar": "SMNBDPT",
+          "nameUS": "'Pink'",
+          "nameEU": "'Flamingo'",
+          "cultivar": "'SMNBDPT'",
           "year": 2017,
           "patent": "US PP28836",
           "patentUrl": "https://patents.justia.com/patent/PP28836",
           "color": {
             "name": "Élénk pink-lila",
             "rhs": null,
-            "rgb": [215, 100, 158]
+            "rgb": [
+              215,
+              100,
+              158
+            ]
           },
           "habit": "Kompakt, sűrű, kerekded. Vastag szárak, bőrszerű levelek. Robosztus alak.",
           "flowerSize": null,
@@ -652,16 +784,20 @@
         },
         {
           "id": "smnbdo",
-          "nameUS": "Periwinkle",
-          "nameEU": "Orchid",
-          "cultivar": "SMNBDO",
+          "nameUS": "'Periwinkle'",
+          "nameEU": "'Orchid'",
+          "cultivar": "'SMNBDO'",
           "year": 2017,
           "patent": "US PP28796",
           "patentUrl": "https://patents.justia.com/patent/PP28796",
           "color": {
             "name": "Orgona-lila-pink",
             "rhs": "80A–82A",
-            "rgb": [148, 140, 210]
+            "rgb": [
+              148,
+              140,
+              210
+            ]
           },
           "habit": "Kompakt, felfelé törő, kerekded.",
           "flowerSize": "~12 cm",
@@ -673,16 +809,20 @@
         },
         {
           "id": "smnbdw",
-          "nameUS": "White",
-          "nameEU": "Snow",
-          "cultivar": "SMNBDW",
+          "nameUS": "'White'",
+          "nameEU": "'Snow'",
+          "cultivar": "'SMNBDW'",
           "year": 2017,
           "patent": "US PP28795",
           "patentUrl": "https://patents.justia.com/patent/PP28795",
           "color": {
             "name": "Fehér",
             "rhs": "155D",
-            "rgb": [235, 232, 225]
+            "rgb": [
+              235,
+              232,
+              225
+            ]
           },
           "habit": "Kompakt, felfelé törő, kerekded. Óriási fehér bugák.",
           "flowerSize": "max 34 cm",
@@ -694,16 +834,22 @@
         },
         {
           "id": "smnbdl",
-          "name": "Amethyst",
-          "cultivar": "SMNBDL",
+          "name": "'Amethyst'",
+          "cultivar": "'SMNBDL'",
           "year": 2019,
           "patent": "US PP30236",
           "patentUrl": "https://patents.justia.com/patent/PP30236",
-          "availableMarkets": ["US"],
+          "availableMarkets": [
+            "US"
+          ],
           "color": {
             "name": "Viola-lila",
             "rhs": "84A",
-            "rgb": [110, 60, 150]
+            "rgb": [
+              110,
+              60,
+              150
+            ]
           },
           "habit": "Kompakt, felfelé törő. Rendkívül nagy, sűrű bugák.",
           "flowerSize": "14–19.5 cm",
@@ -715,16 +861,22 @@
         },
         {
           "id": "smnbdb",
-          "name": "Pinker",
-          "cultivar": "SMNBDB",
+          "name": "'Pinker'",
+          "cultivar": "'SMNBDB'",
           "year": 2021,
           "patent": "US PP33565",
           "patentUrl": "https://patents.justia.com/patent/PP33565",
-          "availableMarkets": ["US"],
+          "availableMarkets": [
+            "US"
+          ],
           "color": {
             "name": "Vöröses-lila-pink",
             "rhs": "N78B",
-            "rgb": [200, 65, 110]
+            "rgb": [
+              200,
+              65,
+              110
+            ]
           },
           "habit": "Kompakt, felfelé törő, kerekded. Nagy, sűrű bugák.",
           "flowerSize": "~12 cm",
@@ -736,14 +888,18 @@
         },
         {
           "id": "smnbdfri",
-          "name": "Pico Punch",
-          "cultivar": "SMNBDFRI",
+          "name": "'Pico Punch'",
+          "cultivar": "'SMNBDFRI'",
           "year": null,
           "patent": null,
           "color": {
             "name": "Élénk magenta",
             "rhs": null,
-            "rgb": [230, 60, 130]
+            "rgb": [
+              230,
+              60,
+              130
+            ]
           },
           "habit": null,
           "flowerSize": null,
@@ -754,14 +910,18 @@
         },
         {
           "id": "smnbwcxpp",
-          "name": "Sorbet",
-          "cultivar": "SMNBWCXPP",
+          "name": "'Sorbet'",
+          "cultivar": "'SMNBWCXPP'",
           "year": null,
           "patent": null,
           "color": {
             "name": "Halvány lila-fehér",
             "rhs": null,
-            "rgb": [200, 175, 220]
+            "rgb": [
+              200,
+              175,
+              220
+            ]
           },
           "habit": null,
           "flowerSize": null,
@@ -781,15 +941,19 @@
       "varieties": [
         {
           "id": "balchryurp",
-          "name": "Purple",
-          "cultivar": "Balchryurp",
+          "name": "'Purple'",
+          "cultivar": "'Balchryurp'",
           "year": 2022,
           "patent": "US PP33847",
           "patentUrl": "https://patents.justia.com/patent/PP33847",
           "color": {
             "name": "Közép-viola",
             "rhs": "N89B–N89C",
-            "rgb": [115, 80, 160]
+            "rgb": [
+              115,
+              80,
+              160
+            ]
           },
           "habit": "Alacsony növekedési erély, kompakt gömbölyded. Steril.",
           "flowerSize": "~7.5 cm",
@@ -801,15 +965,19 @@
         },
         {
           "id": "balchrylu",
-          "name": "Blue",
-          "cultivar": "Balchrylu",
+          "name": "'Blue'",
+          "cultivar": "'Balchrylu'",
           "year": 2022,
           "patent": "US PP33842",
           "patentUrl": "https://patents.justia.com/patent/PP33842",
           "color": {
             "name": "Világos viola-kék",
             "rhs": "N88A–N88B",
-            "rgb": [150, 138, 205]
+            "rgb": [
+              150,
+              138,
+              205
+            ]
           },
           "habit": "Alacsony növekedési erély, kompakt gömbölyded. Steril.",
           "flowerSize": "~10.5 cm",
@@ -821,15 +989,19 @@
         },
         {
           "id": "balchryran",
-          "name": "Cranberry",
-          "cultivar": "Balchryran",
+          "name": "'Cranberry'",
+          "cultivar": "'Balchryran'",
           "year": 2022,
           "patent": "US PP33845",
           "patentUrl": "https://patents.justia.com/patent/PP33845",
           "color": {
             "name": "Mély vöröses-lila",
             "rhs": "77A",
-            "rgb": [165, 28, 68]
+            "rgb": [
+              165,
+              28,
+              68
+            ]
           },
           "habit": "Alacsony növekedési erély, kompakt gömbölyded. Steril.",
           "flowerSize": "~15 cm",
@@ -841,15 +1013,19 @@
         },
         {
           "id": "balchryink",
-          "name": "Pink",
-          "cultivar": "Balchryink",
+          "name": "'Pink'",
+          "cultivar": "'Balchryink'",
           "year": 2022,
           "patent": "US PP33843",
           "patentUrl": "https://patents.justia.com/patent/PP33843",
           "color": {
             "name": "Halvány lila-rózsaszín",
             "rhs": "N82C",
-            "rgb": [195, 140, 185]
+            "rgb": [
+              195,
+              140,
+              185
+            ]
           },
           "habit": "Alacsony növekedési erély, kompakt gömbölyded. Steril.",
           "flowerSize": "~11 cm",
@@ -861,15 +1037,19 @@
         },
         {
           "id": "balchryite",
-          "name": "White",
-          "cultivar": "Balchryite",
+          "name": "'White'",
+          "cultivar": "'Balchryite'",
           "year": 2022,
           "patent": "US PP33846",
           "patentUrl": "https://patents.justia.com/patent/PP33846",
           "color": {
             "name": "Fehér",
             "rhs": "NN155D · 13B/N25A",
-            "rgb": [235, 232, 225]
+            "rgb": [
+              235,
+              232,
+              225
+            ]
           },
           "habit": "Alacsony növekedési erély, kompakt gömbölyded. Steril.",
           "flowerSize": "~9 cm",
