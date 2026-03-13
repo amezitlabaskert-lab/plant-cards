@@ -1,5 +1,5 @@
 /* =========================================================
-   plant-cards.js  v1.0
+   plant-cards.js  v1.1
    Univerzális növénykártya-carousel JSON-ból
    
    Használat:
@@ -170,11 +170,12 @@
 
     var total = series.varieties.length;
 
-    // Meta sor (nemesítő, télállóság)
+    // Meta sor (nemesítő, forgalmazó, télállóság)
     var meta = [];
-    if (series.breeder)    meta.push(series.breeder);
-    if (series.breederEU)  meta.push('EU: ' + series.breederEU);
-    if (series.hardiness)  meta.push('❄️ ' + series.hardiness);
+    if (series.breeder)     meta.push(series.breeder);
+    if (series.breederUS)   meta.push('🇺🇸 ' + series.breederUS);
+    if (series.breederEU)   meta.push('🇪🇺 ' + series.breederEU);
+    if (series.hardiness)   meta.push('❄️ ' + series.hardiness);
     var metaHtml = meta.length
       ? '<div class="pc-series-meta">' + meta.join(' · ') + '</div>'
       : '';
