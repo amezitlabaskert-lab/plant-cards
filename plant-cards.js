@@ -1,8 +1,9 @@
 /* =========================================================
-   plant-cards.js  v1.7
+   plant-cards.js  v1.8
    Univerzális növénykártya-carousel JSON-ból
    
    Változások:
+     v1.8 - habitus label fix: Habitus · Virágméret · Illat mindig megjelenik; hiányzó adat: n.a.
      v1.7 - patent badge: ↗ → 🔗 emoji; Twemoji: csak zászló emojik (1f1xx)
      v1.6 - Twemoji fix: explicit CDN base, callback eltávolítva; CSS: img.emoji fix
      v1.5 - Twemoji visszarakva, CSS fix: .pc-media img:not(.emoji)
@@ -114,19 +115,19 @@
 
     // Habitus szekció
     var habitusSection = '';
-    if (v.habit || v.flowerSize || v.scent) {
+    {
       var notes = [];
-      if (v.flowerSize) notes.push('Virágzat: ' + v.flowerSize);
-      if (v.scent)      notes.push('Illat: ' + v.scent);
+      notes.push(v.flowerSize || 'n.a.');
+      notes.push(v.scent      || 'n.a.');
       habitusSection = '<div class="pc-habitus">'
-        + '<div class="pc-detail-label">Habitus</div>'
-        + (v.habit ? '<div class="pc-habitus-text">' + v.habit + '</div>' : '')
-        + (notes.length ? '<div class="pc-habitus-note">' + notes.join(' · ') + '</div>' : '')
+        + '<div class="pc-detail-label">Habitus · Virágméret · Illat</div>'
+        + (v.habit ? '<div class="pc-habitus-text">' + v.habit + '</div>' : '<div class="pc-habitus-text">n.a.</div>')
+        + '<div class="pc-habitus-note">' + notes.join(' · ') + '</div>'
         + '</div>';
     }
 
     // Divider csak ha mindkettő van
-    var divider = (colorSection && habitusSection) ? '<div class="pc-divider"></div>' : '';
+    var divider = colorSection ? '<div class="pc-divider"></div>' : '';
 
     // Media szekció
     var mediaSection = '';
