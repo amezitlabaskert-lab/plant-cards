@@ -13,31 +13,28 @@
   border-radius: 18px;
   box-shadow: 0 4px 28px rgba(60, 40, 80, 0.10);
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden eltávolítva — ez vágta le a videó képét! */
 }
 
 .pc-track {
   position: relative;
+  /* A track magasságát az .active kártya határozza meg */
 }
 
 /* --- Kártya --- */
 .pc-card {
-  position: absolute;
-  top: 0; left: 0;
+  /* Inaktív kártyák: teljesen rejtve, de NEM absolute —
+     az absolute + overflow:hidden kombó vágta le a videót */
+  display: none;
   width: 100%;
   background: #fff;
-  display: flex;
   flex-direction: column;
   overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  border-radius: 18px;
 }
 
 .pc-card.active {
-  position: relative;
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 .pc-card-body {
@@ -207,8 +204,10 @@
 
 .pc-video-wrap {
   position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 arány */
   height: 0;
-  padding-bottom: 56.25%;
+  overflow: hidden;
 }
 
 .pc-video-wrap iframe {
