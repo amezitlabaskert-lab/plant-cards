@@ -1,8 +1,9 @@
 /* =========================================================
-   plant-cards.js  v1.8
+   plant-cards.js  v1.9
    Univerzális növénykártya-carousel JSON-ból
    
    Változások:
+     v1.9 - habitus szekció: habit / virágméret / illat külön sorban jelenik meg
      v1.8 - habitus label fix: Habitus · Virágméret · Illat mindig megjelenik; hiányzó adat: n.a.
      v1.7 - patent badge: ↗ → 🔗 emoji; Twemoji: csak zászló emojik (1f1xx)
      v1.6 - Twemoji fix: explicit CDN base, callback eltávolítva; CSS: img.emoji fix
@@ -113,16 +114,14 @@
         + '</div>';
     }
 
-    // Habitus szekció
+    // Habitus szekció — habit / virágméret / illat külön sorban
     var habitusSection = '';
     {
-      var notes = [];
-      notes.push(v.flowerSize || 'n.a.');
-      notes.push(v.scent      || 'n.a.');
       habitusSection = '<div class="pc-habitus">'
         + '<div class="pc-detail-label">Habitus · Virágméret · Illat</div>'
-        + (v.habit ? '<div class="pc-habitus-text">' + v.habit + '</div>' : '<div class="pc-habitus-text">n.a.</div>')
-        + '<div class="pc-habitus-note">' + notes.join(' · ') + '</div>'
+        + '<div class="pc-habitus-text">' + (v.habit      || 'n.a.') + '</div>'
+        + '<div class="pc-habitus-text">' + (v.flowerSize || 'n.a.') + '</div>'
+        + '<div class="pc-habitus-text">' + (v.scent      || 'n.a.') + '</div>'
         + '</div>';
     }
 
@@ -373,7 +372,7 @@
     if (url) window.open(url, '_blank', 'noopener');
   });
 
-  console.log('%c🌿 plant-cards.js v1.7 betöltve', 'color: #7b4ea0; font-weight: bold;');
+  console.log('%c🌿 plant-cards.js v1.9 betöltve', 'color: #7b4ea0; font-weight: bold;');
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(); });
