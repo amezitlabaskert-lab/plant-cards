@@ -1,0 +1,113 @@
+{
+  "series": [
+    {
+      "id": "little-rockstars",
+      "name": "Little Rockstars®",
+      "breeder": "Botanic Experience B.V. (Hollandia)",
+      "hardiness": "-18°C",
+      "varieties": [
+        {
+          "id": "botex-013",
+          "name": "'White'",
+          "cultivar": "'Botex 013'",
+          "year": 2025,
+          "patent": "US PP36650",
+          "patentUrl": "https://patents.justia.com/patent/PP36650",
+          "color": {
+            "name": "Fehér",
+            "rhs": "NN155B",
+            "rgb": [243, 239, 232]
+          },
+          "habit": "Nagyon kompakt, sűrű, felfelé kerekedő. Gömbölyded.",
+          "flowerSize": "~7 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "image",
+            "url": "https://image.plantipp.eu/RC_Data_FMS/PlanTipp/PlanTipp/2099786796437503604060428083938165541949824190164190970783/Buddleja%20Little%20Rockstars%20White%20(2).jpg"
+          }
+        },
+        {
+          "id": "botex-009",
+          "name": "'Red'",
+          "cultivar": "'Botex 009'",
+          "year": 2025,
+          "patent": "US PP36579",
+          "patentUrl": "https://patents.justia.com/patent/PP36579",
+          "color": {
+            "name": "Fukszia-rózsaszín",
+            "rhs": "71C",
+            "rgb": [172, 70, 128]
+          },
+          "habit": "Nagyon kompakt, sűrű, felfelé törő. Gömbölyded.",
+          "flowerSize": "~6.7 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "image",
+            "url": "https://image.plantipp.eu/RC_Data_FMS/PlanTipp/PlanTipp/6101278829349283870147321437602439931633297024438006549369/Buddleja%20Little%20Rockstars%20Red%20(1).jpg"
+          }
+        },
+        {
+          "id": "botex-010",
+          "name": "'Purple'",
+          "cultivar": "'Botex 010'",
+          "year": 2025,
+          "patent": "US PP36825",
+          "patentUrl": "https://patents.justia.com/patent/PP36825",
+          "color": {
+            "name": "Sötét, vibráló lila",
+            "rhs": "N81A → N74A",
+            "rhsNote": "friss → érett",
+            "rgb": [120, 47, 119]
+          },
+          "habit": "Nagyon kompakt, sűrű, felfelé törő. Gömbölyded.",
+          "flowerSize": "~6 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "image",
+            "url": "https://image.plantipp.eu/RC_Data_FMS/PlanTipp/PlanTipp/5026317010374038735179771130574267818283972541768505334762/Buddleja%20Little%20Rockstars%20Purple%20(2).jpg"
+          }
+        },
+        {
+          "id": "botex-011",
+          "name": "'Pink'",
+          "cultivar": "'Botex 011'",
+          "year": 2025,
+          "patent": "US PP36670",
+          "patentUrl": "https://patents.justia.com/patent/PP36670",
+          "color": {
+            "name": "Világos rózsaszín",
+            "rhs": "62B",
+            "rgb": [240, 160, 186]
+          },
+          "habit": "Nagyon kompakt, sűrű, felfelé törő. Gömbölyded.",
+          "flowerSize": "~7.2 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "image",
+            "url": "https://image.plantipp.eu/RC_Data_FMS/PlanTipp/PlanTipp/2424119467965104454533615538921820327023792032060712094427/Buddleja%20Little%20Rockstars%20Pink%20(2).jpg"
+          }
+        },
+        {
+          "id": "botex-012",
+          "name": "'Blue'",
+          "cultivar": "'Botex 012'",
+          "year": 2025,
+          "patent": "US PP36649",
+          "patentUrl": "https://patents.justia.com/patent/PP36649",
+          "color": {
+            "name": "Orgonalila",
+            "rhs": "90B",
+            "rgb": [107, 86, 143]
+          },
+          "habit": "Nagyon kompakt, sűrű, felfelé törő. Gömbölyded.",
+          "flowerSize": "~5.2 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "image",
+            "url": "https://image.plantipp.eu/RC_Data_FMS/PlanTipp/PlanTipp/2863831395517880604355988830405149402906550132365428969991/Buddleja%20Little%20Rockstars%20Blue%20(2).jpg"
+          }
+        }
+      ]
+    }
+  ]
+}
