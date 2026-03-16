@@ -1,41 +1,15 @@
 /* =========================================================
-   plant-cards.js  v2.3
-   Univerzális növénykártya-carousel JSON-ból
+   plant-cards.js  v2.4
    
    Változások:
-     v2.3 - stopVideosInCard fix: data-orig-src attribútumban tárolja
-             az iframe eredeti src-jét, így visszalépéskor nem veszik el
-             a videóadat; restoreVideosInCard az aktív kártyán fut
-     v2.2 - YouTube: youtube-nocookie.com domain, rel=0, modestbranding=1,
-             iv_load_policy=3 (annotációk ki), kevesebb ajánló és tracking
-     v2.1 - CSS fix: pc-card display:none/flex váltás (overflow:hidden vágta a videót);
-             JS fix: kártyaváltáskor iframe src reset a hang leállításához
-     v2.0 - YouTube iframe fix: rel=0, playsinline=1, enablejsapi=1, origin param,
-             frameborder=0, teljes allow attribútum a lejátszáshoz
-     v1.9 - habitus szekció: habit / virágméret / illat külön sorban jelenik meg
-     v1.8 - habitus label fix: Habitus · Virágméret · Illat mindig megjelenik; hiányzó adat: n.a.
-     v1.7 - patent badge: ↗ → 🔗 emoji; Twemoji: csak zászló emojik (1f1xx)
-     v1.6 - Twemoji fix: explicit CDN base, callback eltávolítva; CSS: img.emoji fix
-     v1.5 - Twemoji visszarakva, CSS fix: .pc-media img:not(.emoji)
-     v1.4 - Twemoji kikapcsolva (teszt)
-     v1.3 - Twemoji parse a JS-generált tartalomra (render után)
-     v1.2 - h2 sorozatnév és meta sor (breeder, hardiness) eltávolítva
-     v1.1 - eredeti verzió
-   
-   Használat:
-     <div class="plant-cards" data-src="URL/buddleja.json"></div>
-     <script src="URL/plant-cards.js"></script>
-   
-   Opcionális attribútumok a div-en:
-     data-css="URL/plant-cards.css"   ← ha nem alapértelmezett helyen van
+     v2.4 - stopVideosInCard: YouTube postMessage pause parancs az iframe src
+             törlése helyett — így nem veszik el a videóadat visszalépéskor.
+             Az src-t a kód egyáltalán nem módosítja többé.
    ========================================================= */
 
 (function () {
   'use strict';
 
-  /* ---------------------------------------------------------
-     CSS betöltés
-  --------------------------------------------------------- */
   function loadCSS(href) {
     if (document.querySelector('link[href="' + href + '"]')) return;
     var link = document.createElement('link');
@@ -44,9 +18,6 @@
     document.head.appendChild(link);
   }
 
-  /* ---------------------------------------------------------
-     Név megjelenítés: name / nameEU / nameUS logika
-  --------------------------------------------------------- */
   function displayName(v) {
     if (v.name) return v.name;
     var parts = [];
@@ -55,13 +26,9 @@
     return parts.join(' / ');
   }
 
-  /* ---------------------------------------------------------
-     Accent szín a color.rgb-ből
-  --------------------------------------------------------- */
   function accentGradient(color) {
     if (!color || !color.rgb) return 'linear-gradient(#c9b0e0, #a080c0)';
     var r = color.rgb[0], g = color.rgb[1], b = color.rgb[2];
-    // Sötétebb verzió
     var dr = Math.max(0, r - 30);
     var dg = Math.max(0, g - 30);
     var db = Math.max(0, b - 30);
@@ -71,9 +38,7 @@
   function swatchStyle(color) {
     if (!color || !color.rgb) return 'background:#ddd;';
     var rgb = color.rgb;
-    // Ha van rhsNote (nyíló → elnyíló), gradient swatch
     if (color.rhsNote) {
-      // Sötétített változat második színnek
       var r2 = Math.max(0, rgb[0] - 40);
       var g2 = Math.max(0, rgb[1] - 40);
       var b2 = Math.max(0, rgb[2] - 40);
@@ -84,15 +49,11 @@
          + (isLight ? ' box-shadow: rgba(0,0,0,0.06) 0px 1px 3px inset; border: 1px solid rgba(0,0,0,0.1);' : '');
   }
 
-  /* ---------------------------------------------------------
-     Kártya HTML építés
-  --------------------------------------------------------- */
-  function buildCard(v, seriesName, idx) {
+  function buildCard(v, seriesName) {
     var name    = displayName(v);
     var cultivar = v.cultivar ? "'" + v.cultivar + "'" + (v.year ? ' (' + v.year + ')' : '') : '';
     var accent  = accentGradient(v.color);
 
-    // Patent badge
     var patentBadge = '';
     if (v.patent && v.patentUrl) {
       patentBadge = '<span class="pc-patent-link" data-url="' + v.patentUrl + '">'
@@ -101,7 +62,6 @@
       patentBadge = '<span class="pc-patent-pending">' + v.patentNote + '</span>';
     }
 
-    // Szín szekció
     var colorSection = '';
     if (v.color) {
       var rhs = v.color.rhs
@@ -116,31 +76,25 @@
         +   '<div class="pc-color-swatch" style="' + swatchStyle(v.color) + '"></div>'
         +   '<div>'
         +     '<div class="pc-color-name">' + (v.color.name || '') + '</div>'
-        +     rhs
-        +     rgb
+        +     rhs + rgb
         +   '</div>'
         + '</div>'
         + '</div>';
     }
 
-    // Habitus szekció — habit / virágméret / illat külön sorban
-    var habitusSection = '';
-    {
-      habitusSection = '<div class="pc-habitus">'
-        + '<div class="pc-detail-label">Habitus · Virágméret · Illat</div>'
-        + '<div class="pc-habitus-text">' + (v.habit      || 'n.a.') + '</div>'
-        + '<div class="pc-habitus-text">' + (v.flowerSize || 'n.a.') + '</div>'
-        + '<div class="pc-habitus-text">' + (v.scent      || 'n.a.') + '</div>'
-        + '</div>';
-    }
+    var habitusSection = '<div class="pc-habitus">'
+      + '<div class="pc-detail-label">Habitus · Virágméret · Illat</div>'
+      + '<div class="pc-habitus-text">' + (v.habit      || 'n.a.') + '</div>'
+      + '<div class="pc-habitus-text">' + (v.flowerSize || 'n.a.') + '</div>'
+      + '<div class="pc-habitus-text">' + (v.scent      || 'n.a.') + '</div>'
+      + '</div>';
 
-    // Divider csak ha mindkettő van
     var divider = colorSection ? '<div class="pc-divider"></div>' : '';
 
-    // Media szekció
     var mediaSection = '';
     if (v.media) {
       if (v.media.type === 'youtube' && v.media.id) {
+        // enablejsapi=1 szükséges a postMessage pause parancshoz
         var ytParams = '?rel=0&playsinline=1&enablejsapi=1'
                      + '&origin=' + encodeURIComponent(window.location.origin);
         var ytSrc = 'https://www.youtube.com/embed/' + v.media.id + ytParams;
@@ -148,7 +102,6 @@
           + '<div class="pc-video-wrap">'
           + '<iframe '
           + 'src="' + ytSrc + '" '
-          + 'data-orig-src="' + ytSrc + '" '
           + 'title="' + name + '" '
           + 'frameborder="0" '
           + 'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '
@@ -177,9 +130,7 @@
       +       patentBadge
       +     '</div>'
       +     '<div class="pc-card-details">'
-      +       colorSection
-      +       divider
-      +       habitusSection
+      +       colorSection + divider + habitusSection
       +     '</div>'
       +   '</div>'
       + '</div>'
@@ -187,18 +138,14 @@
       + '</div>';
   }
 
-  /* ---------------------------------------------------------
-     Carousel HTML + nav
-  --------------------------------------------------------- */
   function buildCarousel(series, carouselId) {
     var seriesDisplayName = series.name ||
       [series.nameUS ? '🇺🇸 ' + series.nameUS : '',
        series.nameEU ? '🇪🇺 ' + series.nameEU : '']
       .filter(Boolean).join(' / ') || '';
-    var cards = series.varieties.map(function (v, i) {
-      return buildCard(v, seriesDisplayName, i);
+    var cards = series.varieties.map(function (v) {
+      return buildCard(v, seriesDisplayName);
     }).join('');
-
     var total = series.varieties.length;
 
     return '<div class="pc-carousel-section" id="pc-carousel-' + carouselId + '">'
@@ -217,8 +164,26 @@
   }
 
   /* ---------------------------------------------------------
-     Carousel logika
+     Video leállítás — src törlése nélkül
+     
+     A YouTube iFrame API postMessage protokollja:
+     { event: "command", func: "pauseVideo", args: [] }
+     Ezt el kell küldeni az iframe contentWindow-ának.
+     Ha a videó még nem játszott, a parancs nem csinál semmit — ez rendben van.
   --------------------------------------------------------- */
+  function pauseVideosInCard(card) {
+    card.querySelectorAll('iframe').forEach(function (iframe) {
+      try {
+        iframe.contentWindow.postMessage(
+          JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
+          'https://www.youtube.com'
+        );
+      } catch (e) {
+        // cross-origin hiba esetén csendben elnyeljük
+      }
+    });
+  }
+
   var pcState = {};
 
   function pcInitCarousel(id, total) {
@@ -226,17 +191,14 @@
 
     var track   = document.getElementById('pc-track-' + id);
     var dotsEl  = document.getElementById('pc-dots-' + id);
-    var counter = document.getElementById('pc-counter-' + id);
     var prevBtn = document.getElementById('pc-prev-' + id);
     var nextBtn = document.getElementById('pc-next-' + id);
 
     if (!track || !dotsEl) return;
 
-    // Első kártya aktív
     var cards = track.querySelectorAll('.pc-card');
     cards.forEach(function (c, i) { c.classList.toggle('active', i === 0); });
 
-    // Dotok
     dotsEl.innerHTML = '';
     for (var i = 0; i < total; i++) {
       (function (idx) {
@@ -248,11 +210,9 @@
       })(i);
     }
 
-    // Gombok
     if (prevBtn) prevBtn.addEventListener('click', function () { pcGoTo(id, pcState[id].cur - 1); });
     if (nextBtn) nextBtn.addEventListener('click', function () { pcGoTo(id, pcState[id].cur + 1); });
 
-    // Touch swipe
     var wrap = document.querySelector('#pc-carousel-' + id + ' .pc-track-wrap');
     if (wrap) {
       var startX = 0;
@@ -266,33 +226,6 @@
     }
   }
 
-  /* ---------------------------------------------------------
-     Video kezelés: leállítás és visszaállítás
-     
-     A stopVideosInCard az iframe src-jét üríti (ez megállítja a lejátszást),
-     de az eredeti URL-t megőrzi a data-orig-src attribútumban — amit vagy
-     a buildCard már beállított, vagy itt mentjük el először.
-     
-     A restoreVideosInCard az aktív kártyán állítja vissza az src-t, ha üres.
-  --------------------------------------------------------- */
-  function stopVideosInCard(card) {
-    card.querySelectorAll('iframe').forEach(function (iframe) {
-      if (!iframe.getAttribute('data-orig-src')) {
-        iframe.setAttribute('data-orig-src', iframe.src);
-      }
-      iframe.src = '';
-    });
-  }
-
-  function restoreVideosInCard(card) {
-    card.querySelectorAll('iframe').forEach(function (iframe) {
-      var orig = iframe.getAttribute('data-orig-src');
-      if (orig && !iframe.src) {
-        iframe.src = orig;
-      }
-    });
-  }
-
   function pcGoTo(id, idx) {
     var s = pcState[id];
     if (!s) return;
@@ -302,11 +235,11 @@
     var track = document.getElementById('pc-track-' + id);
     if (track) {
       track.querySelectorAll('.pc-card').forEach(function (c, i) {
-        var leaving = c.classList.contains('active') && i !== idx;
-        if (leaving) stopVideosInCard(c);
+        // Elhagyott kártyán pause — src érintése nélkül
+        if (c.classList.contains('active') && i !== idx) {
+          pauseVideosInCard(c);
+        }
         c.classList.toggle('active', i === idx);
-        // Aktív kártyán visszaállítjuk az src-t, ha korábban ki lett ürítve
-        if (i === idx) restoreVideosInCard(c);
       });
     }
 
@@ -326,13 +259,9 @@
     if (nextBtn) nextBtn.disabled = (idx === s.total - 1);
   }
 
-  /* ---------------------------------------------------------
-     Render
-  --------------------------------------------------------- */
   function render(container, data, filterIds) {
     var html = '';
     data.series.forEach(function (series, si) {
-      // Ha van data-series szűrő, csak azokat rendereli
       if (filterIds && filterIds.length && filterIds.indexOf(series.id) === -1) return;
       var carouselId = series.id || ('series-' + si);
       html += buildCarousel(series, carouselId);
@@ -340,14 +269,12 @@
 
     container.innerHTML = html;
 
-    // Twemoji a JS-generált tartalomra
     if (window.twemoji) {
       twemoji.parse(container, {
         folder: 'svg',
         ext: '.svg',
         base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
         callback: function (icon, options) {
-          // Csak zászló emojikat cseréljük (1f1xx sorozat)
           if (icon.indexOf('1f1') === 0) {
             return ''.concat(options.base, options.size, '/', icon, options.ext);
           }
@@ -356,18 +283,13 @@
       });
     }
 
-    // Inicializálás
     data.series.forEach(function (series, si) {
       if (filterIds && filterIds.length && filterIds.indexOf(series.id) === -1) return;
       var carouselId = series.id || ('series-' + si);
-      var total = series.varieties.length;
-      if (total > 0) pcInitCarousel(carouselId, total);
+      if (series.varieties.length > 0) pcInitCarousel(carouselId, series.varieties.length);
     });
   }
 
-  /* ---------------------------------------------------------
-     Egy container inicializálása
-  --------------------------------------------------------- */
   function initContainer(container) {
     if (container.getAttribute('data-pc-init')) return;
     container.setAttribute('data-pc-init', '1');
@@ -380,8 +302,7 @@
     if (cssUrl) {
       loadCSS(cssUrl);
     } else {
-      var scripts = document.querySelectorAll('script[src]');
-      scripts.forEach(function (s) {
+      document.querySelectorAll('script[src]').forEach(function (s) {
         if (s.src && s.src.indexOf('plant-cards.js') !== -1) {
           loadCSS(s.src.replace('plant-cards.js', 'plant-cards.css'));
         }
@@ -395,26 +316,18 @@
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.json();
       })
-      .then(function (data) {
-        render(container, data, filterIds);
-      })
+      .then(function (data) { render(container, data, filterIds); })
       .catch(function (err) {
         container.innerHTML = '<div class="pc-error">Nem sikerült betölteni az adatokat.<br><small>' + err.message + '</small></div>';
       });
   }
 
-  /* ---------------------------------------------------------
-     Belépési pont
-  --------------------------------------------------------- */
   function init(scope) {
-    var root = scope || document;
-    root.querySelectorAll('.plant-cards[data-src]').forEach(initContainer);
+    (scope || document).querySelectorAll('.plant-cards[data-src]').forEach(initContainer);
   }
 
-  // Globális újrainicializálás — modal újratöltéshez
   window.reinitPlantCards = function (scope) { init(scope); };
 
-  // Patent link handler — <span> mert Blogger az <a> tageket normalizálja
   document.addEventListener('click', function (e) {
     var el = e.target.closest('.pc-patent-link');
     if (!el) return;
@@ -422,7 +335,7 @@
     if (url) window.open(url, '_blank', 'noopener');
   });
 
-  console.log('%c🌿 plant-cards.js v2.3 betöltve', 'color: #7b4ea0; font-weight: bold;');
+  console.log('%c🌿 plant-cards.js v2.4 betöltve', 'color: #7b4ea0; font-weight: bold;');
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(); });
