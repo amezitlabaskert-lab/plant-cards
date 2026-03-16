@@ -62,6 +62,15 @@
       patentBadge = '<span class="pc-patent-pending">' + v.patentNote + '</span>';
     }
 
+    var marketBadge = '';
+    if (v.availableMarkets && v.availableMarkets.length === 1) {
+      if (v.availableMarkets[0] === 'US') {
+        marketBadge = '<span class="pc-market-badge pc-market-us">🇺🇸 US only</span>';
+      } else if (v.availableMarkets[0] === 'EU') {
+        marketBadge = '<span class="pc-market-badge pc-market-eu">🇪🇺 EU only</span>';
+      }
+    }
+
     var colorSection = '';
     if (v.color) {
       var rhs = v.color.rhs
@@ -124,7 +133,10 @@
       +     '<div class="pc-card-header">'
       +       '<div>'
       +         '<div class="pc-series-tag">' + seriesName + '</div>'
-      +         '<div class="pc-card-title">' + name + '</div>'
+      +         '<div class="pc-card-title-row">'
+      +           '<div class="pc-card-title">' + name + '</div>'
+      +           (marketBadge ? marketBadge : '')
+      +         '</div>'
       +         (cultivar ? '<div class="pc-card-subtitle">' + cultivar + '</div>' : '')
       +       '</div>'
       +       patentBadge
