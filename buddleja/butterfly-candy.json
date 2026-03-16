@@ -18,9 +18,9 @@
             "rhs": "N155B",
             "rgb": [240, 230, 231]
           },
-          "habit": "Kompakt, felfelé törő, sűrű ágrendszer. Természetes formája oblong.",
+          "habit": "Kompakt, sűrű, felfelé kerekedő. Oblong alak.",
           "flowerSize": "11.5 cm",
-          "scent": "édes, kellemes, enyhe",
+          "scent": "édes, kellemes, enyhe erősségű",
           "media": {
             "type": "youtube",
             "id": "gslEEFIcqfA"
@@ -38,7 +38,7 @@
             "rhs": "N87D",
             "rgb": [186, 155, 191]
           },
-          "habit": "Sűrű, kompakt, kissé szétterülő, de alapvetően felfelé kerekedő.",
+          "habit": "Kompakt, sűrű, kissé szétterülő, felfelé kerekedő.",
           "flowerSize": "11.5 cm",
           "scent": "édes, kellemes, közepes erősségű",
           "media": {
@@ -58,7 +58,7 @@
             "rhs": "85A",
             "rgb": [178, 164, 212]
           },
-          "habit": "Kompakt, de határozottan felfelé törő. Elegáns, vázaszerű alak.",
+          "habit": "Kompakt, sűrű, felfelé törő. Vázaszerű alak.",
           "flowerSize": "11.5 cm",
           "scent": "édes, kellemes, közepes erősségű",
           "media": {
@@ -78,7 +78,7 @@
             "rhs": "90B",
             "rgb": [148, 132, 190]
           },
-          "habit": "Nagyon kompakt, sűrű ágrendszerű. Természetes formája felfelé kerekedő.",
+          "habit": "Nagyon kompakt, sűrű, felfelé kerekedő.",
           "flowerSize": "5.3 cm",
           "scent": "édes, kellemes, közepes erősségű",
           "media": {
@@ -99,7 +99,7 @@
             "rhsNote": "friss → érett",
             "rgb": [123, 53, 109]
           },
-          "habit": "Nagyon kompakt, sűrű és felfelé törő. Természetesen gömbölyded, rendezett forma.",
+          "habit": "Nagyon kompakt, sűrű, felfelé törő. Gömbölyded.",
           "flowerSize": "6 cm",
           "scent": "édes, kellemes, közepes erősségű",
           "media": {
@@ -119,7 +119,7 @@
             "rhs": "N74C",
             "rgb": [211, 107, 179]
           },
-          "habit": "Rendkívül kompakt, sűrű és felfelé törő. Természetesen gömbölyded formát ölt.",
+          "habit": "Kompakt, sűrű, felfelé törő. Gömbölyded.",
           "flowerSize": "12 cm",
           "scent": "édes, kellemes, közepes erősségű",
           "media": {
@@ -140,7 +140,7 @@
             "rhsNote": "friss → érett",
             "rgb": [200, 60, 100]
           },
-          "habit": "Sűrű, rendkívül kompakt és felfelé törő. Természetesen kerekded forma.",
+          "habit": "Kompakt, sűrű, felfelé törő. Gömbölyded.",
           "flowerSize": "14 cm",
           "scent": "édes, kellemes, közepes erősségű",
           "media": {
@@ -160,7 +160,7 @@
             "rhs": "58B",
             "rgb": [183, 44, 100]
           },
-          "habit": "Sűrű, nagyon kompakt, felfelé törő. Természetes váza-alakú növekedés.",
+          "habit": "Kompakt, sűrű, felfelé törő. Vázaszerű alak.",
           "flowerSize": "7 cm",
           "scent": "édes, kellemes, közepes erősségű",
           "media": {
@@ -180,7 +180,7 @@
             "rhs": null,
             "rgb": [220, 30, 120]
           },
-          "habit": "Jól elágazó, természetesen kerekded, kompakt növekedés.",
+          "habit": "Kompakt, sűrű, gömbölyded.",
           "flowerSize": null,
           "media": {
             "type": "image",
@@ -199,7 +199,7 @@
             "rhs": null,
             "rgb": [58, 30, 110]
           },
-          "habit": "Természetesen kerekded, gömbölyű forma. A sorozat egyik legsűrűbb, legjobban elágazó tagja.",
+          "habit": "Kompakt, sűrű, gömbölyded. A sorozat legjobban elágazó tagja.",
           "flowerSize": null,
           "media": {
             "type": "image",
