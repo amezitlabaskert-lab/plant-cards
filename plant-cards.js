@@ -124,7 +124,7 @@
       +     '<div class="pc-card-header">'
       +       '<div>'
       +         '<div class="pc-series-tag">' + seriesName + '</div>'
-      +         '<div class="pc-card-title">\'' + name + '\'</div>'
+      +         '<div class="pc-card-title">' + name + '</div>'
       +         (cultivar ? '<div class="pc-card-subtitle">' + cultivar + '</div>' : '')
       +       '</div>'
       +       patentBadge
