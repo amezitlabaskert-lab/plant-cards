@@ -1,8 +1,11 @@
 /* =========================================================
-   plant-cards.js  v2.2
+   plant-cards.js  v2.3
    Univerzális növénykártya-carousel JSON-ból
    
    Változások:
+     v2.3 - stopVideosInCard fix: data-orig-src attribútumban tárolja
+             az iframe eredeti src-jét, így visszalépéskor nem veszik el
+             a videóadat; restoreVideosInCard az aktív kártyán fut
      v2.2 - YouTube: youtube-nocookie.com domain, rel=0, modestbranding=1,
              iv_load_policy=3 (annotációk ki), kevesebb ajánló és tracking
      v2.1 - CSS fix: pc-card display:none/flex váltás (overflow:hidden vágta a videót);
@@ -138,16 +141,14 @@
     var mediaSection = '';
     if (v.media) {
       if (v.media.type === 'youtube' && v.media.id) {
-        // rel=0: ne ajánljon más videókat
-        // playsinline=1: mobilon ne ugorjon teljes képernyőre
-        // enablejsapi=1: JS API engedélyezve
-        // origin: CORS hiba elkerülése
         var ytParams = '?rel=0&playsinline=1&enablejsapi=1'
                      + '&origin=' + encodeURIComponent(window.location.origin);
+        var ytSrc = 'https://www.youtube.com/embed/' + v.media.id + ytParams;
         mediaSection = '<div class="pc-media">'
           + '<div class="pc-video-wrap">'
           + '<iframe '
-          + 'src="https://www.youtube.com/embed/' + v.media.id + ytParams + '" '
+          + 'src="' + ytSrc + '" '
+          + 'data-orig-src="' + ytSrc + '" '
           + 'title="' + name + '" '
           + 'frameborder="0" '
           + 'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '
@@ -265,11 +266,30 @@
     }
   }
 
+  /* ---------------------------------------------------------
+     Video kezelés: leállítás és visszaállítás
+     
+     A stopVideosInCard az iframe src-jét üríti (ez megállítja a lejátszást),
+     de az eredeti URL-t megőrzi a data-orig-src attribútumban — amit vagy
+     a buildCard már beállított, vagy itt mentjük el először.
+     
+     A restoreVideosInCard az aktív kártyán állítja vissza az src-t, ha üres.
+  --------------------------------------------------------- */
   function stopVideosInCard(card) {
     card.querySelectorAll('iframe').forEach(function (iframe) {
-      var src = iframe.src;
+      if (!iframe.getAttribute('data-orig-src')) {
+        iframe.setAttribute('data-orig-src', iframe.src);
+      }
       iframe.src = '';
-      iframe.src = src;
+    });
+  }
+
+  function restoreVideosInCard(card) {
+    card.querySelectorAll('iframe').forEach(function (iframe) {
+      var orig = iframe.getAttribute('data-orig-src');
+      if (orig && !iframe.src) {
+        iframe.src = orig;
+      }
     });
   }
 
@@ -285,6 +305,8 @@
         var leaving = c.classList.contains('active') && i !== idx;
         if (leaving) stopVideosInCard(c);
         c.classList.toggle('active', i === idx);
+        // Aktív kártyán visszaállítjuk az src-t, ha korábban ki lett ürítve
+        if (i === idx) restoreVideosInCard(c);
       });
     }
 
@@ -400,7 +422,7 @@
     if (url) window.open(url, '_blank', 'noopener');
   });
 
-  console.log('%c🌿 plant-cards.js v2.2 betöltve', 'color: #7b4ea0; font-weight: bold;');
+  console.log('%c🌿 plant-cards.js v2.3 betöltve', 'color: #7b4ea0; font-weight: bold;');
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(); });
