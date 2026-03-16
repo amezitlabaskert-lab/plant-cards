@@ -1,0 +1,212 @@
+{
+  "series": [
+    {
+      "id": "butterfly-candy",
+      "name": "Butterfly Candy®",
+      "breeder": "Johannes Adrianus Maria Koot (Botanic Experience B.V., Hollandia)",
+      "hardiness": "-18°C",
+      "varieties": [
+        {
+          "id": "botex-003",
+          "name": "'Little White'",
+          "cultivar": "'Botex 003'",
+          "year": 2022,
+          "patent": "US PP34525",
+          "patentUrl": "https://patents.justia.com/patent/PP34525",
+          "color": {
+            "name": "Fehér",
+            "rhs": "N155B",
+            "rgb": [240, 230, 231]
+          },
+          "habit": "Kompakt, felfelé törő, sűrű ágrendszer. Természetes formája oblong.",
+          "flowerSize": "11.5 cm",
+          "scent": "édes, kellemes, enyhe",
+          "media": {
+            "type": "youtube",
+            "id": "gslEEFIcqfA"
+          }
+        },
+        {
+          "id": "botex-002",
+          "name": "'Lila Sweetheart'",
+          "cultivar": "'Botex 002'",
+          "year": 2022,
+          "patent": "US PP34499",
+          "patentUrl": "https://patents.justia.com/patent/PP34499",
+          "color": {
+            "name": "Világos lila",
+            "rhs": "N87D",
+            "rgb": [186, 155, 191]
+          },
+          "habit": "Sűrű, kompakt, kissé szétterülő, de alapvetően felfelé kerekedő.",
+          "flowerSize": "11.5 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "youtube",
+            "id": "7cGLyrCwSwk"
+          }
+        },
+        {
+          "id": "botex-004",
+          "name": "'Little Lila'",
+          "cultivar": "'Botex 004'",
+          "year": 2022,
+          "patent": "US PP34378",
+          "patentUrl": "https://patents.justia.com/patent/PP34378",
+          "color": {
+            "name": "Orgonalila",
+            "rhs": "85A",
+            "rgb": [178, 164, 212]
+          },
+          "habit": "Kompakt, de határozottan felfelé törő. Elegáns, vázaszerű alak.",
+          "flowerSize": "11.5 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "youtube",
+            "id": "gYdNUnvuCgQ"
+          }
+        },
+        {
+          "id": "botex-001",
+          "name": "'Little Purple'",
+          "cultivar": "'Botex 001'",
+          "year": 2022,
+          "patent": "US PP34515",
+          "patentUrl": "https://patents.justia.com/patent/PP34515",
+          "color": {
+            "name": "Intenzív lila",
+            "rhs": "90B",
+            "rgb": [148, 132, 190]
+          },
+          "habit": "Nagyon kompakt, sűrű ágrendszerű. Természetes formája felfelé kerekedő.",
+          "flowerSize": "5.3 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "youtube",
+            "id": "L1u3Fg2fdIw"
+          }
+        },
+        {
+          "id": "botex-008",
+          "name": "'Little Magenta'",
+          "cultivar": "'Botex 008'",
+          "year": 2023,
+          "patent": "US PP36578",
+          "patentUrl": "https://patents.justia.com/patent/PP36578",
+          "color": {
+            "name": "Magenta-lila",
+            "rhs": "77A → 81A",
+            "rhsNote": "friss → érett",
+            "rgb": [123, 53, 109]
+          },
+          "habit": "Nagyon kompakt, sűrű és felfelé törő. Természetesen gömbölyded, rendezett forma.",
+          "flowerSize": "6 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "image",
+            "url": "https://image.plantipp.eu/RC_Data_FMS/PlanTipp/PlanTipp/3091816736137791737479792782775234671012995676247093197248/Buddleja%20Butterfly%20Candy%20Little%20Magenta%20(20).jpg"
+          }
+        },
+        {
+          "id": "botex-005",
+          "name": "'Little Pink'",
+          "cultivar": "'Botex 005'",
+          "year": 2022,
+          "patent": "US PP34703",
+          "patentUrl": "https://patents.justia.com/patent/PP34703",
+          "color": {
+            "name": "Élénk rózsaszín",
+            "rhs": "N74C",
+            "rgb": [211, 107, 179]
+          },
+          "habit": "Rendkívül kompakt, sűrű és felfelé törő. Természetesen gömbölyded formát ölt.",
+          "flowerSize": "12 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "youtube",
+            "id": "rYucCBFf5OM"
+          }
+        },
+        {
+          "id": "botex-007",
+          "name": "'Little Cerise'",
+          "cultivar": "'Botex 007'",
+          "year": 2024,
+          "patent": "US PP36348",
+          "patentUrl": "https://patents.justia.com/patent/PP36348",
+          "color": {
+            "name": "Cseresznyepiros → lazacrózsaszín",
+            "rhs": "71C → 63A",
+            "rhsNote": "friss → érett",
+            "rgb": [200, 60, 100]
+          },
+          "habit": "Sűrű, rendkívül kompakt és felfelé törő. Természetesen kerekded forma.",
+          "flowerSize": "14 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "image",
+            "url": "https://image.plantipp.eu/RC_Data_FMS/PlanTipp/PlanTipp/1681611332855071791846090861886991745146009869885680424461/Buddleja%20Butterfly%20Candy%20-%20Little%20Cerise%20(5).jpg"
+          }
+        },
+        {
+          "id": "botex-006",
+          "name": "'Little Ruby'",
+          "cultivar": "'Botex 006'",
+          "year": 2022,
+          "patent": "US PP34500",
+          "patentUrl": "https://patents.justia.com/patent/PP34500",
+          "color": {
+            "name": "Vöröses-rózsaszín",
+            "rhs": "58B",
+            "rgb": [183, 44, 100]
+          },
+          "habit": "Sűrű, nagyon kompakt, felfelé törő. Természetes váza-alakú növekedés.",
+          "flowerSize": "7 cm",
+          "scent": "édes, kellemes, közepes erősségű",
+          "media": {
+            "type": "youtube",
+            "id": "6VbSd1QoRb0"
+          }
+        },
+        {
+          "id": "botex-014",
+          "name": "'Little Bubblegum'",
+          "cultivar": "'Botex 014'",
+          "year": 2025,
+          "patent": null,
+          "patentNote": "PBR bejegyzés alatt",
+          "color": {
+            "name": "Vibráló neon-rózsaszín",
+            "rhs": null,
+            "rgb": [220, 30, 120]
+          },
+          "habit": "Jól elágazó, természetesen kerekded, kompakt növekedés.",
+          "flowerSize": null,
+          "media": {
+            "type": "image",
+            "url": "https://image.plantipp.eu/RC_Data_FMS/PlanTipp/PlanTipp/4953436301570200895142987467090426187559266387634802991592/Buddleja%20Butterfly%20Candy%20Little%20Bubblegum%20(1).jpg"
+          }
+        },
+        {
+          "id": "botex-016",
+          "name": "'Little Blackberry'",
+          "cultivar": "'Botex 016'",
+          "year": 2025,
+          "patent": null,
+          "patentNote": "PBR bejegyzés alatt",
+          "color": {
+            "name": "Drámai sötétlila",
+            "rhs": null,
+            "rgb": [58, 30, 110]
+          },
+          "habit": "Természetesen kerekded, gömbölyű forma. A sorozat egyik legsűrűbb, legjobban elágazó tagja.",
+          "flowerSize": null,
+          "media": {
+            "type": "image",
+            "url": "https://image.plantipp.eu/RC_Data_FMS/PlanTipp/PlanTipp/656575279490250271816759332477458109684239420880592335727/Buddleja%20Butterfly%20Candy%20Little%20Blackberry%20(4).jpg"
+          }
+        }
+      ]
+    }
+  ]
+}
