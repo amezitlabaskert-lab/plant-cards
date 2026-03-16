@@ -19,7 +19,7 @@
             "rgb": [240, 230, 231]
           },
           "habit": "Kompakt, sűrű, felfelé kerekedő. Oblong alak.",
-          "flowerSize": "11.5 cm",
+          "flowerSize": "~11.5 cm",
           "scent": "Édes, kellemes, enyhe erősségű",
           "media": {
             "type": "youtube",
@@ -39,7 +39,7 @@
             "rgb": [186, 155, 191]
           },
           "habit": "Kompakt, sűrű, kissé szétterülő, felfelé kerekedő.",
-          "flowerSize": "11.5 cm",
+          "flowerSize": "~11.5 cm",
           "scent": "Édes, kellemes, közepes erősségű",
           "media": {
             "type": "youtube",
@@ -59,7 +59,7 @@
             "rgb": [178, 164, 212]
           },
           "habit": "Kompakt, sűrű, felfelé törő. Vázaszerű alak.",
-          "flowerSize": "11.5 cm",
+          "flowerSize": "~11.5 cm",
           "scent": "Édes, kellemes, közepes erősségű",
           "media": {
             "type": "youtube",
@@ -79,7 +79,7 @@
             "rgb": [148, 132, 190]
           },
           "habit": "Nagyon kompakt, sűrű, felfelé kerekedő.",
-          "flowerSize": "5.3 cm",
+          "flowerSize": "~5.3 cm",
           "scent": "Édes, kellemes, közepes erősségű",
           "media": {
             "type": "youtube",
@@ -100,7 +100,7 @@
             "rgb": [123, 53, 109]
           },
           "habit": "Nagyon kompakt, sűrű, felfelé törő. Gömbölyded.",
-          "flowerSize": "6 cm",
+          "flowerSize": "~6 cm",
           "scent": "Édes, kellemes, közepes erősségű",
           "media": {
             "type": "image",
@@ -120,7 +120,7 @@
             "rgb": [211, 107, 179]
           },
           "habit": "Kompakt, sűrű, felfelé törő. Gömbölyded.",
-          "flowerSize": "12 cm",
+          "flowerSize": "~12 cm",
           "scent": "Édes, kellemes, közepes erősségű",
           "media": {
             "type": "youtube",
@@ -141,7 +141,7 @@
             "rgb": [200, 60, 100]
           },
           "habit": "Kompakt, sűrű, felfelé törő. Gömbölyded.",
-          "flowerSize": "14 cm",
+          "flowerSize": "~14 cm",
           "scent": "Édes, kellemes, közepes erősségű",
           "media": {
             "type": "image",
@@ -161,7 +161,7 @@
             "rgb": [183, 44, 100]
           },
           "habit": "Kompakt, sűrű, felfelé törő. Vázaszerű alak.",
-          "flowerSize": "7 cm",
+          "flowerSize": "~7 cm",
           "scent": "Édes, kellemes, közepes erősségű",
           "media": {
             "type": "youtube",
