@@ -1,7 +1,10 @@
 /* =========================================================
-   plant-cards.js  v2.6
+   plant-cards.js  v2.7
    
    Változások:
+     v2.7 - twemoji: base URL és callback eltávolítva — a már betöltött
+             window.twemoji példány saját CDN-jét használja, így a zászlók
+             helyesen jelennek meg.
      v2.6 - twemoji callback: return false eltávolítva — a zászló emojik
              most helyesen jelennek meg modal nézetben is.
      v2.5 - displayName: nameUS / nameEU sorrend javítva (korábban EU került előre).
@@ -282,14 +285,7 @@
     if (window.twemoji) {
       twemoji.parse(container, {
         folder: 'svg',
-        ext: '.svg',
-        base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
-        callback: function (icon, options) {
-          if (icon.indexOf('1f1') === 0) {
-            return ''.concat(options.base, options.size, '/', icon, options.ext);
-          }
-          // return false törölve — a többi emoji érintetlen marad
-        }
+        ext: '.svg'
       });
     }
 
@@ -345,7 +341,7 @@
     if (url) window.open(url, '_blank', 'noopener');
   });
 
-  console.log('%c🌿 plant-cards.js v2.6 betöltve', 'color: #7b4ea0; font-weight: bold;');
+  console.log('%c🌿 plant-cards.js v2.7 betöltve', 'color: #7b4ea0; font-weight: bold;');
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(); });
