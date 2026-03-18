@@ -1,1 +1,204 @@
-
+{
+  "series": [
+    {
+      "id": "lo-behold",
+      "name": "Lo & Behold®",
+      "breeder": "North Carolina State University",
+      "hardiness": "-8°C (5. zóna)",
+      "varieties": [
+        {
+          "id": "blue-chip",
+          "name": "'Blue Chip'",
+          "cultivar": "'Blue Chip'",
+          "year": 2009,
+          "patent": "US PP19991",
+          "patentUrl": "https://patents.justia.com/patent/PP19991",
+          "color": {
+            "name": "Ibolyakék",
+            "rhs": "90C",
+            "rgb": [
+              100,
+              110,
+              170
+            ]
+          },
+          "habit": "Kompakt, szétterülő, sűrűn elágazó.",
+          "flowerSize": "~7.8 cm",
+          "scent": "Határozott édes illat",
+          "media": {
+            "type": "video",
+            "url": "https://www.youtube.com/watch?v=sYfx_NJWkG0"
+          }
+        },
+        {
+          "id": "blue-chip-jr",
+          "name": "'Blue Chip Jr'",
+          "cultivar": "'Blue Chip Jr'",
+          "year": 2016,
+          "patent": "US PP26581",
+          "patentUrl": "https://patents.justia.com/patent/PP26581",
+          "color": {
+            "name": "Lilásviola",
+            "rhs": "N82A",
+            "rgb": [
+              115,
+              80,
+              160
+            ]
+          },
+          "habit": "Törpe, sűrű, szétterülő. Megnyúlt virágzat.",
+          "flowerSize": "~10 cm",
+          "scent": "Határozott édes illat",
+          "media": {
+            "type": "video",
+            "url": "https://www.youtube.com/watch?v=C5JCx8lU5c4"
+          }
+        },
+        {
+          "id": "ice-chip",
+          "name": "'Ice Chip'",
+          "cultivar": "'Ice Chip'",
+          "year": 2013,
+          "patent": "US PP24015",
+          "patentUrl": "https://patents.justia.com/patent/PP24015",
+          "color": {
+            "name": "Fehér",
+            "rhs": "NN155B",
+            "rgb": [
+              243,
+              239,
+              232
+            ]
+          },
+          "habit": "Törpe, sűrű, szétterülő. Szürkészöld levél.",
+          "flowerSize": "~8.1 cm",
+          "scent": "Határozott édes illat",
+          "media": {
+            "type": "video",
+            "url": "https://www.youtube.com/watch?v=feKv1kaHaAE"
+          }
+        },
+        {
+          "id": "lilac-chip",
+          "name": "'Lilac Chip'",
+          "cultivar": "'Lilac Chip'",
+          "year": 2013,
+          "patent": "US PP24016",
+          "patentUrl": "https://patents.justia.com/patent/PP24016",
+          "color": {
+            "name": "Viola",
+            "rhs": "84C",
+            "rgb": [
+              175,
+              130,
+              190
+            ]
+          },
+          "habit": "Nagyon törpe, sűrű, szétterülő. Szürkészöld levél.",
+          "flowerSize": "~6.2 cm",
+          "scent": "Határozott édes illat",
+          "media": {
+            "type": "image",
+            "url": "https://i.postimg.cc/9XZvYJ7Y/Buddleia-Lo-Behold-Lilac-Chip.jpg"
+          }
+        },
+        {
+          "id": "miss-molly",
+          "name": "'Miss Molly'",
+          "cultivar": "'Miss Molly'",
+          "year": 2013,
+          "patent": "US PP23425",
+          "patentUrl": "https://patents.justia.com/patent/PP23425",
+          "color": {
+            "name": "Sötét vöröseslila",
+            "rhs": "61B",
+            "rgb": [
+              172,
+              44,
+              90
+            ]
+          },
+          "habit": "Félkompakt, félfelálló, sűrűn elágazó.",
+          "flowerSize": "~10.6 cm",
+          "scent": "Határozott édes illat",
+          "media": {
+            "type": "image",
+            "url": "https://i.postimg.cc/44VrQB9W/Buddleia-Lo-Behold-Miss-Molly.jpg"
+          }
+        },
+        {
+          "id": "pink-micro-chip",
+          "name": "'Pink Micro Chip'",
+          "cultivar": "'Pink Micro Chip'",
+          "year": 2016,
+          "patent": "US PP26547",
+          "patentUrl": "https://patents.justia.com/patent/PP26547",
+          "color": {
+            "name": "Vöröslila",
+            "rhs": "72C",
+            "rgb": [
+              195,
+              80,
+              130
+            ]
+          },
+          "habit": "Nagyon törpe, sűrű, szétterülő. Hosszú virágzat.",
+          "flowerSize": "~15.6 cm",
+          "scent": "Határozott édes illat",
+          "media": {
+            "type": "image",
+            "url": "https://i.postimg.cc/BZHdBMKh/Buddleia-Lo-Behold-Pink-Micro-Chip.jpg"
+          }
+        },
+        {
+          "id": "purple-haze",
+          "name": "'Purple Haze'",
+          "cultivar": "'Purple Haze'",
+          "year": 2014,
+          "patent": "US PP24514",
+          "patentUrl": "https://patents.justia.com/patent/PP24514",
+          "color": {
+            "name": "Lilásviola",
+            "rhs": "N82A",
+            "rgb": [
+              115,
+              80,
+              160
+            ]
+          },
+          "habit": "Félkompakt, szétterülő-domborodó, ívelt ágak, csüngő virágzatok.",
+          "flowerSize": "~19.6 cm",
+          "scent": "Határozott édes illat",
+          "media": {
+            "type": "image",
+            "url": "https://i.postimg.cc/CMkWsmqP/Buddleia-Lo-Behold-Purple-Haze.jpg"
+          }
+        },
+        {
+          "id": "ruby-chip",
+          "name": "'Ruby Chip'",
+          "cultivar": "'SMNBDD'",
+          "year": 2020,
+          "patent": "US PP32399",
+          "patentUrl": "https://patents.justia.com/patent/PP32399",
+          "color": {
+            "name": "Sötét vöröseslila",
+            "rhs": "72A",
+            "rgb": [
+              160,
+              40,
+              95
+            ]
+          },
+          "habit": "Kompakt, felfelé törő és szétterülő, sűrű, bozótos megjelenés.",
+          "flowerSize": "4–10 cm",
+          "scent": "Édes, mézes, kellemes",
+          "media": {
+            "type": "image",
+            "url": "https://i.postimg.cc/XNdTkQCT/Buddleia-Lo-Behold-Ruby-Chip.jpg"
+          }
+        }
+      ]
+    }
+  ]
+}
