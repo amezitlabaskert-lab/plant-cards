@@ -1,7 +1,9 @@
 /* =========================================================
-   plant-cards.js  v2.5
+   plant-cards.js  v2.6
    
    Változások:
+     v2.6 - twemoji callback: return false eltávolítva — a zászló emojik
+             most helyesen jelennek meg modal nézetben is.
      v2.5 - displayName: nameUS / nameEU sorrend javítva (korábban EU került előre).
      v2.4 - stopVideosInCard: YouTube postMessage pause parancs az iframe src
              törlése helyett — így nem veszik el a videóadat visszalépéskor.
@@ -179,11 +181,6 @@
 
   /* ---------------------------------------------------------
      Video leállítás — src törlése nélkül
-     
-     A YouTube iFrame API postMessage protokollja:
-     { event: "command", func: "pauseVideo", args: [] }
-     Ezt el kell küldeni az iframe contentWindow-ának.
-     Ha a videó még nem játszott, a parancs nem csinál semmit — ez rendben van.
   --------------------------------------------------------- */
   function pauseVideosInCard(card) {
     card.querySelectorAll('iframe').forEach(function (iframe) {
@@ -249,7 +246,6 @@
     var track = document.getElementById('pc-track-' + id);
     if (track) {
       track.querySelectorAll('.pc-card').forEach(function (c, i) {
-        // Elhagyott kártyán pause — src érintése nélkül
         if (c.classList.contains('active') && i !== idx) {
           pauseVideosInCard(c);
         }
@@ -292,7 +288,7 @@
           if (icon.indexOf('1f1') === 0) {
             return ''.concat(options.base, options.size, '/', icon, options.ext);
           }
-          return false;
+          // return false törölve — a többi emoji érintetlen marad
         }
       });
     }
@@ -349,7 +345,7 @@
     if (url) window.open(url, '_blank', 'noopener');
   });
 
-  console.log('%c🌿 plant-cards.js v2.5 betöltve', 'color: #7b4ea0; font-weight: bold;');
+  console.log('%c🌿 plant-cards.js v2.6 betöltve', 'color: #7b4ea0; font-weight: bold;');
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(); });
