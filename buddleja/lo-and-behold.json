@@ -26,8 +26,8 @@
           "flowerSize": "~7.8 cm",
           "scent": "Határozott édes illat",
           "media": {
-            "type": "video",
-            "url": "https://www.youtube.com/watch?v=sYfx_NJWkG0"
+            "type": "youtube",
+            "id": "sYfx_NJWkG0"
           }
         },
         {
@@ -50,8 +50,8 @@
           "flowerSize": "~10 cm",
           "scent": "Határozott édes illat",
           "media": {
-            "type": "video",
-            "url": "https://www.youtube.com/watch?v=C5JCx8lU5c4"
+            "type": "youtube",
+            "id": "C5JCx8lU5c4"
           }
         },
         {
@@ -74,8 +74,8 @@
           "flowerSize": "~8.1 cm",
           "scent": "Határozott édes illat",
           "media": {
-            "type": "video",
-            "url": "https://www.youtube.com/watch?v=feKv1kaHaAE"
+            "type": "youtube",
+            "id": "feKv1kaHaAE"
           }
         },
         {
