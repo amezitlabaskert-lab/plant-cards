@@ -1,7 +1,8 @@
 /* =========================================================
-   plant-cards.js  v2.4
+   plant-cards.js  v2.5
    
    Változások:
+     v2.5 - displayName: nameUS / nameEU sorrend javítva (korábban EU került előre).
      v2.4 - stopVideosInCard: YouTube postMessage pause parancs az iframe src
              törlése helyett — így nem veszik el a videóadat visszalépéskor.
              Az src-t a kód egyáltalán nem módosítja többé.
@@ -22,8 +23,8 @@
     if (v.name) return v.name;
     if (v.nameEU && v.nameUS && v.nameEU === v.nameUS) return v.nameEU;
     var parts = [];
-    if (v.nameEU) parts.push(v.nameEU);
     if (v.nameUS) parts.push(v.nameUS);
+    if (v.nameEU) parts.push(v.nameEU);
     return parts.join(' / ');
   }
 
@@ -348,7 +349,7 @@
     if (url) window.open(url, '_blank', 'noopener');
   });
 
-  console.log('%c🌿 plant-cards.js v2.4 betöltve', 'color: #7b4ea0; font-weight: bold;');
+  console.log('%c🌿 plant-cards.js v2.5 betöltve', 'color: #7b4ea0; font-weight: bold;');
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(); });
