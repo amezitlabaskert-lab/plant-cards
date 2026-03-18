@@ -1,1 +1,213 @@
-
+{
+  "series": [
+    {
+      "id": "pugster-rocketstar",
+      "nameUS": "Pugster®",
+      "nameEU": "Rocketstar®",
+      "breeder": "Spring Meadow Nursery Inc.",
+      "hardiness": "-31°C",
+      "varieties": [
+        {
+          "id": "smnbdl",
+          "nameUS": "'Amethyst'",
+          "cultivar": "'SMNBDL'",
+          "year": 2019,
+          "patent": "US PP30236",
+          "patentUrl": "https://patents.justia.com/patent/PP30236",
+          "color": {
+            "name": "Viola",
+            "rhs": "84A",
+            "rgb": [
+              150,
+              110,
+              185
+            ]
+          },
+          "habit": "Kompakt, felfelé törő és szétterülő, sűrű, bozótos.",
+          "flowerSize": "14–19.5 cm",
+          "scent": "Édes, mézes illat",
+          "media": {
+            "type": "youtube",
+            "id": "9xCQexyyz00"
+          },
+          "availableMarkets": [
+            "US"
+          ]
+        },
+        {
+          "id": "smnbdbt",
+          "nameUS": "'Blue'",
+          "nameEU": "'Indigo'",
+          "cultivar": "'SMNBDBT'",
+          "year": 2017,
+          "patent": "US PP28794",
+          "patentUrl": "https://patents.justia.com/patent/PP28794",
+          "color": {
+            "name": "Ibolyakék",
+            "rhs": "93A",
+            "rgb": [
+              90,
+              100,
+              175
+            ]
+          },
+          "habit": "Kompakt, sűrű, gömbölyded, kissé lapított tetejű.",
+          "flowerSize": "~15.8 cm",
+          "scent": "Könnyű virágos, édes mézes illat",
+          "media": {
+            "type": "image",
+            "url": "https://i.postimg.cc/vBL5kZcB/Buddleia-Pugster-Blue.webp"
+          }
+        },
+        {
+          "id": "smnbdo",
+          "nameUS": "'Periwinkle'",
+          "nameEU": "'Orchid'",
+          "cultivar": "'SMNBDO'",
+          "year": 2017,
+          "patent": "US PP28796",
+          "patentUrl": "https://patents.justia.com/patent/PP28796",
+          "color": {
+            "name": "Lilásrózsaszín",
+            "rhs": "80A",
+            "rgb": [
+              175,
+              110,
+              170
+            ]
+          },
+          "habit": "Kompakt, sűrű, felfelé törő. Széles, nagy virágzatok.",
+          "flowerSize": "~12 cm",
+          "scent": "Erős mézes illat",
+          "media": {
+            "type": "youtube",
+            "id": "Vtq-rL0l98g"
+          }
+        },
+        {
+          "id": "smnbdpt",
+          "nameUS": "'Pink'",
+          "nameEU": "'Flamingo'",
+          "cultivar": "'SMNBDPT'",
+          "year": 2018,
+          "patent": "US PP28836",
+          "patentUrl": "https://patents.justia.com/patent/PP28836",
+          "color": {
+            "name": "Lila",
+            "rhs": "77C",
+            "rgb": [
+              155,
+              90,
+              165
+            ]
+          },
+          "habit": "Kompakt, sűrű, szétterülő, kissé lapított tetejű.",
+          "flowerSize": "~21.2 cm",
+          "scent": "Erős mézes illat",
+          "media": {
+            "type": "youtube",
+            "id": "-NTmwUgl8CI"
+          }
+        },
+        {
+          "id": "smnbdb",
+          "nameUS": "'Pinker'",
+          "cultivar": "'SMNBDB'",
+          "year": 2021,
+          "patent": "US PP33565",
+          "patentUrl": "https://patents.justia.com/patent/PP33565",
+          "color": {
+            "name": "Erős vöröseslila",
+            "rhs": "N78B",
+            "rgb": [
+              185,
+              65,
+              140
+            ]
+          },
+          "habit": "Kompakt, felfelé törő és szétterülő, sűrű, bozótos. Erőteljes növekedés.",
+          "flowerSize": "~12 cm",
+          "scent": "Édes, mézes illat",
+          "media": {
+            "type": "youtube",
+            "id": "LycJPoJ7oxg"
+          },
+          "availableMarkets": [
+            "US"
+          ]
+        },
+        {
+          "id": "smnbdw",
+          "nameUS": "'White'",
+          "nameEU": "'Snow'",
+          "cultivar": "'SMNBDW'",
+          "year": 2017,
+          "patent": "US PP28795",
+          "patentUrl": "https://patents.justia.com/patent/PP28795",
+          "color": {
+            "name": "Fehér",
+            "rhs": "155D",
+            "rgb": [
+              248,
+              245,
+              240
+            ]
+          },
+          "habit": "Kompakt, sűrű, felfelé törő.",
+          "flowerSize": "~34 cm",
+          "scent": "Erős mézes illat",
+          "media": {
+            "type": "youtube",
+            "id": "uGxOi65yeQg"
+          }
+        },
+        {
+          "id": "smnbwcxpp",
+          "nameUS": "'Sorbet'",
+          "cultivar": "'SMNBWCXPP'",
+          "year": null,
+          "patent": null,
+          "patentNote": "Bejegyzés alatt",
+          "color": {
+            "name": null,
+            "rhs": null,
+            "rgb": null
+          },
+          "habit": null,
+          "flowerSize": null,
+          "scent": null,
+          "media": {
+            "type": "image",
+            "url": "https://i.postimg.cc/XJc9mYpY/Buddleia-Pugster-Sorbet.jpg"
+          },
+          "availableMarkets": [
+            "US"
+          ]
+        },
+        {
+          "id": "smnbdfri",
+          "nameUS": "'Pico Punch'",
+          "cultivar": "'SMNBDFRI'",
+          "year": null,
+          "patent": null,
+          "patentNote": "Bejegyzés alatt",
+          "color": {
+            "name": null,
+            "rhs": null,
+            "rgb": null
+          },
+          "habit": null,
+          "flowerSize": null,
+          "scent": null,
+          "media": {
+            "type": "image",
+            "url": "https://i.postimg.cc/W360C1h4/Buddleia-Pugster-Pico-Punch.jpg"
+          },
+          "availableMarkets": [
+            "US"
+          ]
+        }
+      ]
+    }
+  ]
+}
