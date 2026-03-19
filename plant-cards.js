@@ -1,16 +1,8 @@
 /* =========================================================
-   plant-cards.js  v2.7
+   plant-cards.js  v3.0
    
    Változások:
-     v2.7 - twemoji: base URL és callback eltávolítva — a már betöltött
-             window.twemoji példány saját CDN-jét használja, így a zászlók
-             helyesen jelennek meg.
-     v2.6 - twemoji callback: return false eltávolítva — a zászló emojik
-             most helyesen jelennek meg modal nézetben is.
-     v2.5 - displayName: nameUS / nameEU sorrend javítva (korábban EU került előre).
-     v2.4 - stopVideosInCard: YouTube postMessage pause parancs az iframe src
-             törlése helyett — így nem veszik el a videóadat visszalépéskor.
-             Az src-t a kód egyáltalán nem módosítja többé.
+     v3.0 - Twemoji teljes eltávolítása.
    ========================================================= */
 
 (function () {
@@ -59,7 +51,7 @@
   function buildCard(v, seriesName) {
     var name    = displayName(v);
     var cultivar = v.cultivar ? v.cultivar + (v.year ? ' (' + v.year + ')' : '') : '';
-    var accent  = accentGradient(v.color);
+    var accent   = accentGradient(v.color);
 
     var patentBadge = '';
     if (v.patent && v.patentUrl) {
@@ -102,7 +94,7 @@
       + '<div class="pc-detail-label">Habitus · Virágméret · Illat</div>'
       + '<div class="pc-habitus-text">' + (v.habit      || 'n.a.') + '</div>'
       + '<div class="pc-habitus-text">' + (v.flowerSize || 'n.a.') + '</div>'
-      + '<div class="pc-habitus-text">' + (v.scent      || 'n.a.') + '</div>'
+      + '<div class="pc-habitus-text">' + (v.scent       || 'n.a.') + '</div>'
       + '</div>';
 
     var divider = colorSection ? '<div class="pc-divider"></div>' : '';
@@ -110,7 +102,6 @@
     var mediaSection = '';
     if (v.media) {
       if (v.media.type === 'youtube' && v.media.id) {
-        // enablejsapi=1 szükséges a postMessage pause parancshoz
         var ytParams = '?rel=0&playsinline=1&enablejsapi=1'
                      + '&origin=' + encodeURIComponent(window.location.origin);
         var ytSrc = 'https://www.youtube.com/embed/' + v.media.id + ytParams;
@@ -182,9 +173,6 @@
       + '</div>';
   }
 
-  /* ---------------------------------------------------------
-     Video leállítás — src törlése nélkül
-  --------------------------------------------------------- */
   function pauseVideosInCard(card) {
     card.querySelectorAll('iframe').forEach(function (iframe) {
       try {
@@ -192,9 +180,7 @@
           JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
           'https://www.youtube.com'
         );
-      } catch (e) {
-        // cross-origin hiba esetén csendben elnyeljük
-      }
+      } catch (e) {}
     });
   }
 
@@ -282,13 +268,6 @@
 
     container.innerHTML = html;
 
-    if (window.twemoji) {
-      twemoji.parse(container, {
-        folder: 'svg',
-        ext: '.svg'
-      });
-    }
-
     data.series.forEach(function (series, si) {
       if (filterIds && filterIds.length && filterIds.indexOf(series.id) === -1) return;
       var carouselId = series.id || ('series-' + si);
@@ -341,7 +320,7 @@
     if (url) window.open(url, '_blank', 'noopener');
   });
 
-  console.log('%c🌿 plant-cards.js v2.7 betöltve', 'color: #7b4ea0; font-weight: bold;');
+  console.log('%c🌿 plant-cards.js v3.0 (Clean)', 'color: #2e7d32; font-weight: bold;');
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(); });
