@@ -64,9 +64,9 @@
     var marketBadge = '';
     if (v.availableMarkets && v.availableMarkets.length === 1) {
       if (v.availableMarkets[0] === 'US') {
-        marketBadge = '<span class="pc-market-badge pc-market-us">🇺🇸 US only</span>';
+        marketBadge = '<span class="pc-market-badge pc-market-us">US only</span>';
       } else if (v.availableMarkets[0] === 'EU') {
-        marketBadge = '<span class="pc-market-badge pc-market-eu">🇪🇺 EU only</span>';
+        marketBadge = '<span class="pc-market-badge pc-market-eu">EU only</span>';
       }
     }
 
